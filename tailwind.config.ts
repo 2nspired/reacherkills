@@ -10,6 +10,10 @@ export default {
         bebas: ["var(--font-bebas)"],
         sometype: ["var(--font-sometype)", ...fontFamily.mono],
       },
+      screens: {
+        "3xl": "1920px",
+        "4xl": "2400px",
+      },
     },
   },
   plugins: [],
