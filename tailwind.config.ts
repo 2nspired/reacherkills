@@ -7,6 +7,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+        bebas: ["var(--font-bebas)"],
+        sometype: ["var(--font-sometype)", ...fontFamily.mono],
       },
     },
   },
