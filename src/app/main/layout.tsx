@@ -1,5 +1,5 @@
 import DevWindowBreakpoint from "~/components/DevWindowBreakpoint";
-import MaintenanceMode from "~/app/(main)/_components/MaintenanceMode";
+import MaintenanceMode from "~/app/main/_components/MaintenanceMode";
 import { isDev, isProd } from "~/utilities/platform";
 
 type LayoutProps = Readonly<{
