@@ -57,9 +57,10 @@ export default function HomePage() {
                     <Image
                       src="/icons/icon-prime-video.svg"
                       alt="Amazon Prime"
-                      className="h-auto w-auto"
-                      width={100}
-                      height={100}
+                      className="h-[35px] w-auto"
+                      width={50}
+                      height={50}
+                      priority={true}
                     />
                   </button>
                 </a>
