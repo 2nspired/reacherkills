@@ -1,4 +1,4 @@
-import Scrambler from "~/app/main/_components/Scrambler";
+import Scrambler from "~/app/(main)/_components/Scrambler";
 
 export default function LandingPage() {
   return (
