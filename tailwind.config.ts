@@ -14,6 +14,9 @@ export default {
         "3xl": "1920px",
         "4xl": "2400px",
       },
+      colors: {
+        accent: "#F87315",
+      },
     },
   },
   plugins: [],
