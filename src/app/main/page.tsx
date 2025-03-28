@@ -145,7 +145,7 @@ export default function HomePage() {
               </CardDescription>
             </CardHeader>
             <CardContent className="flex flex-row items-center justify-center text-zinc-200">
-              <div className="-mt-[20p] flex h-48 w-48 items-center justify-center rounded-full border-[20px]">
+              <div className="-mt-[20px] flex h-48 w-48 items-center justify-center rounded-full border-[20px]">
                 [donut graph]
               </div>
             </CardContent>
