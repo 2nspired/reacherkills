@@ -6,7 +6,7 @@ export default function Header() {
     <div className="my-3 mt-6 flex w-full flex-col items-start">
       <div className="flex w-full flex-col justify-between md:flex-row md:items-center">
         <Logo className="flex flex-row items-center text-5xl md:justify-center" />
-        <div className="px-6 font-sometype font-bold md:px-0 lg:text-lg">
+        <div className="px-6 font-sometype text-sm font-bold md:px-0 lg:text-lg">
           More Accurate Than the Police Reports.
         </div>
         <div className="flex flex-row items-center space-x-2 p-6 md:pr-6">
@@ -15,7 +15,7 @@ export default function Header() {
             target="_blank"
             rel="noreferrer"
           >
-            <button className="rounded-3xl bg-blue-500 px-10 py-2 text-sm text-white transition-colors duration-300 ease-in-out hover:bg-yellow-500">
+            <button className="rounded-3xl bg-blue-500 px-10 py-2 transition-colors duration-300 ease-in-out hover:bg-yellow-500">
               <Image
                 src="/icons/icon-prime-video.svg"
                 alt="Amazon Prime"
@@ -28,7 +28,7 @@ export default function Header() {
         </div>
       </div>
 
-      <nav className="px-6 md:mt-6">[summary] [season stats] </nav>
+      <nav className="hidden px-6 md:mt-6">[summary] [season stats] </nav>
     </div>
   );
 }
