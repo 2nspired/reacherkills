@@ -15,7 +15,7 @@ export default function Header() {
             target="_blank"
             rel="noreferrer"
           >
-            <button className="rounded-3xl bg-yellow-500 px-10 py-2 text-sm text-white transition-colors duration-300 ease-in-out hover:bg-blue-500">
+            <button className="rounded-3xl bg-blue-500 px-10 py-2 text-sm text-white transition-colors duration-300 ease-in-out hover:bg-yellow-500">
               <Image
                 src="/icons/icon-prime-video.svg"
                 alt="Amazon Prime"
