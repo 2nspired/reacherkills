@@ -36,7 +36,7 @@ export default function HomePage() {
 
             {/* MAIN */}
             <div className="w-full py-6">
-              <div className="flex flex-col space-y-1 px-6 font-bebas text-[8rem] font-bold leading-[.90] tracking-wide md:text-[180px]">
+              <div className="flex flex-col space-y-1 px-6 font-bebas text-[7.5rem] font-bold leading-[.90] tracking-wide md:text-[180px]">
                 <div className="text-accent">REACHER</div>
                 <div className="leading-[.60]">KILLS</div>
               </div>
