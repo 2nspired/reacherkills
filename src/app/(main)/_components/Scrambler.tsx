@@ -1,29 +1,31 @@
 "use client";
 
 import { useScramble } from "use-scramble";
+import { forwardRef, useImperativeHandle } from "react";
 
-export default function Scrambler({
-  text,
-  className,
-}: {
-  text: string;
-  className: string;
-}) {
-  const { ref, replay } = useScramble({
+const Scrambler = forwardRef(function Scrambler(
+  {
+    text,
+    className,
+  }: {
+    text: string;
+    className: string;
+  },
+  ref,
+) {
+  const { ref: scrambleRef, replay } = useScramble({
     text: text,
     speed: 0.5,
-    // tick: 2,
     overflow: true,
     scramble: 10,
     seed: 2,
   });
 
-  return (
-    <div
-      ref={ref}
-      onMouseOver={replay}
-      onFocus={replay}
-      className={className}
-    ></div>
-  );
-}
+  useImperativeHandle(ref, () => ({
+    triggerScramble: replay,
+  }));
+
+  return <div ref={scrambleRef} className={className}></div>;
+});
+
+export default Scrambler;
