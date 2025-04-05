@@ -1,0 +1,51 @@
+{
+  "fullName": "Jack Reacher",
+  "estimatedHeight": "6'5\" (196 cm)",
+  "estimatedWeight": "250 lbs (113 kg)",
+  "ageEstimate": "Late 30s to early 40s",
+  "militaryBackground": {
+    "branch": "U.S. Army",
+    "rank": "Major",
+    "unit": "Military Police Corps",
+    "education": "West Point graduate (top of class)",
+    "yearsOfService": 13,
+    "honors": [
+      "Silver Star",
+      "Defense Superior Service Medal",
+      "Legion of Merit",
+      "Bronze Star"
+    ],
+    "dischargeStatus": "Honorably discharged"
+  },
+  "personalityTraits": [
+    "Highly intelligent",
+    "Eidetic memory",
+    "Minimalist",
+    "Moral and stoic",
+    "Extremely resourceful",
+    "Intensely loyal"
+  ],
+  "skills": [
+    "Hand-to-hand combat",
+    "Firearms expert",
+    "Investigation",
+    "Interrogation",
+    "Psychological profiling",
+    "Fluent in French"
+  ],
+  "lifestyle": {
+    "residence": "None (drifter)",
+    "possessions": ["Toothbrush", "Passport"],
+    "habits": ["Drinks black coffee", "Walks from town to town"]
+  },
+  "seriesPortrayal": {
+    "actor": "Alan Ritchson",
+    "adaptation": "Reacher (Amazon Prime Video)",
+    "season1SourceMaterial": "Killing Floor by Lee Child"
+  },
+  "notableFacts": [
+    "Prefers truth and justice over legal red tape",
+    "Often helps strangers in trouble",
+    "Operates outside the system"
+  ]
+}
