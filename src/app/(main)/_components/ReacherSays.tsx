@@ -1,6 +1,5 @@
 "use client";
 
-import { IoMdRefresh } from "react-icons/io";
 import { useEffect, useState } from "react";
 import { TextGenerateEffect } from "~/components/ui/textGenerateEffect";
 
@@ -11,15 +10,12 @@ export default function ReacherSays() {
   const [quote, setQuote] = useState(quotes[0]);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {}, 10000);
-
     const interval = setInterval(() => {
       setQuote(getRandomQuote());
     }, 10000);
 
     return () => {
       clearInterval(interval);
-      clearTimeout(timeout);
     };
   }, []);
 

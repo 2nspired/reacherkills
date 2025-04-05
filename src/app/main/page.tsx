@@ -11,7 +11,7 @@ import {
 } from "~/components/ui/card";
 import ReacherSays from "~/app/(main)/_components/ReacherSays";
 
-import character from "~/data/profile-data.json";
+// import character from "~/data/profile-data.json";
 
 // h-[calc(100vh-97px)] max-h-[778px]
 export default function HomePage() {
