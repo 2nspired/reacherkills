@@ -15,7 +15,7 @@ import character from "~/data/profile-data.json";
 
 // h-[calc(100vh-97px)] max-h-[778px]
 export default function HomePage() {
-  const reacherProfile = character;
+  // const reacherProfile = character;
 
   return (
     <div className="flex h-full w-full flex-col justify-start">
