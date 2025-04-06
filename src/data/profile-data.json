@@ -6,7 +6,8 @@
   "militaryBackground": {
     "branch": "U.S. Army",
     "rank": "Major",
-    "unit": "Military Police Corps",
+    "command": "Military Police Corps",
+    "unit": "110th Special Investigations Unit",
     "education": "West Point graduate (top of class)",
     "yearsOfService": 13,
     "honors": [
@@ -40,7 +41,7 @@
   },
   "seriesPortrayal": {
     "actor": "Alan Ritchson",
-    "adaptation": "Reacher (Amazon Prime Video)",
+    "adaptation": "Reacher (Amazon)",
     "season1SourceMaterial": "Killing Floor by Lee Child"
   },
   "notableFacts": [
