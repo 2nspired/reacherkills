@@ -23,7 +23,7 @@ export default function HomePage() {
         <div className="flex h-full w-full flex-col items-center justify-start">
           <div className="relative h-full max-h-[820px] w-full md:max-h-[1024px] lg:max-h-[1280px]">
             <div className="absolute inset-0 z-0 scale-x-[-1] transform bg-[url('/reacher-images/reacher-2560x1440-06-alpha.png')] bg-cover bg-top 2xl:scale-x-[-1]" />
-            <div className="absolute bottom-0 left-0 right-0 z-10 h-32 bg-gradient-to-t from-black to-transparent"></div>
+            <div className="absolute bottom-0 left-0 right-0 z-10 h-32 bg-linear-to-t from-black to-transparent"></div>
             <div className="relative z-20 h-full overflow-hidden">
               <div className="mx-auto flex h-full w-full max-w-7xl flex-col justify-between py-6">
                 {/* MAIN */}
@@ -100,7 +100,7 @@ export default function HomePage() {
               height={1026}
               unoptimized
             />
-            <div className="absolute bottom-0 left-0 right-0 z-10 h-32 bg-gradient-to-t from-black to-transparent"></div>
+            <div className="absolute bottom-0 left-0 right-0 z-10 h-32 bg-linear-to-t from-black to-transparent"></div>
           </div>
         </div>
       </div>

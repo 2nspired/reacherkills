@@ -9,7 +9,7 @@ export default function DevWindowSize() {
     <>
       <div
         data-size={windowBreakpoint}
-        className="fixed bottom-0 right-0 z-[100] bg-black px-2 py-1 text-sm font-bold text-white"
+        className="fixed bottom-0 right-0 z-100 bg-black px-2 py-1 text-sm font-bold text-white"
       >
         <div className="hidden max-sm:flex">XS</div>
         <div className="hidden sm:max-md:flex">SM</div>
