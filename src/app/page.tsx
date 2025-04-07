@@ -2,7 +2,7 @@ import Scrambler from "~/app/(main)/_components/Scrambler";
 
 export default function LandingPage() {
   return (
-    <main className="flex h-full w-full flex-col items-center justify-center space-y-6 bg-gradient-to-r from-slate-500 to-slate-800 text-white">
+    <main className="flex h-full w-full flex-col items-center justify-center space-y-6 bg-linear-to-r from-slate-500 to-slate-800 text-white">
       <div className="leading-0 flex flex-col items-end font-bebas text-8xl leading-[0.80] tracking-wide sm:text-[160px]">
         <div className="text-orange-500">REACHER</div>
 
