@@ -23,21 +23,21 @@ export default function HomePage() {
         <div className="flex h-full w-full flex-col items-center justify-start">
           <div className="relative h-full max-h-[820px] w-full md:max-h-[1024px] lg:max-h-[1280px]">
             <div className="absolute inset-0 z-0 scale-x-[-1] transform bg-[url('/reacher-images/reacher-2560x1440-06-alpha.png')] bg-cover bg-top 2xl:scale-x-[-1]" />
-            <div className="absolute bottom-0 left-0 right-0 z-10 h-32 bg-linear-to-t from-black to-transparent"></div>
+            <div className="absolute right-0 bottom-0 left-0 z-10 h-32 bg-linear-to-t from-black to-transparent"></div>
             <div className="relative z-20 h-full overflow-hidden">
               <div className="mx-auto flex h-full w-full max-w-7xl flex-col justify-between py-6">
                 {/* MAIN */}
                 <div>
-                  <div className="flex flex-col space-y-1 px-6 font-bebas text-8xl font-bold leading-[.90] tracking-wide sm:text-[9rem] md:text-[180px]">
+                  <div className="font-bebas flex flex-col space-y-1 px-6 text-8xl leading-[.90] font-bold tracking-wide sm:text-[9rem] md:text-[180px]">
                     <div className="text-accent">REACHER</div>
                     <div className="leading-[.60]">KILLS</div>
                   </div>
                   <div className="flex flex-row items-start justify-between">
-                    <div className="px-6 pt-3 font-bebas text-4xl leading-[.90] tracking-wide sm:text-6xl md:text-8xl">
+                    <div className="font-bebas px-6 pt-3 text-4xl leading-[.90] tracking-wide sm:text-6xl md:text-8xl">
                       <div>EVERY BAD GUY.</div>
                       <div>EVERY EPISODE.</div>
                     </div>
-                    <div className="mt-2 hidden w-96 px-6 text-right font-bebas text-6xl">
+                    <div className="font-bebas mt-2 hidden w-96 px-6 text-right text-6xl">
                       <div>Total Kills</div>
                       <div>Methods &</div>
                       <div>Weapons Used</div>
@@ -48,7 +48,7 @@ export default function HomePage() {
                   <div className="font-bebas text-2xl tracking-wide sm:text-4xl md:text-6xl">
                     SITREP
                   </div>
-                  <div className="text max-w-[800px] font-sometype md:text-xl">
+                  <div className="text font-sometype max-w-[800px] md:text-xl">
                     A formidable ex–Military Police officer known only as Jack
                     Reacher has been spotted dispensing vigilante justice across
                     small-town America. Targets include corrupt businessmen,
@@ -57,7 +57,7 @@ export default function HomePage() {
                     anything but.
                   </div>
                   <a
-                    className="group mt-10 flex w-52 flex-row items-center rounded-lg border-2 border-accent bg-black/50 px-4 py-2 font-sometype font-semibold transition-all duration-300 ease-in-out hover:border-transparent hover:bg-white/60 hover:bg-none hover:text-black"
+                    className="group border-accent font-sometype mt-10 flex w-52 flex-row items-center rounded-lg border-2 bg-black/50 px-4 py-2 font-semibold transition-all duration-300 ease-in-out hover:border-transparent hover:bg-white/60 hover:bg-none hover:text-black"
                     href="https://www.amazon.com/gp/video/detail/B09ML1GHXS/ref=atv_sr_fle_c_sr6eee57_1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B09ML111MB&qid=1742970427979"
                     target="_blank"
                     rel="noreferrer"
@@ -81,12 +81,12 @@ export default function HomePage() {
       </div>
 
       {/* stats */}
-      <div className="relative flex w-full flex-col items-center justify-center">
+      <div className="relative flex w-full min-w-screen flex-col items-center justify-center">
         <GridBackground />
-        <div className="min-w-screen relative grid w-full max-w-7xl grid-cols-1 px-6 md:grid-cols-2 lg:grid-cols-3">
-          <div className="hidden w-full md:block lg:col-span-2 lg:col-start-1 lg:ml-40 lg:flex lg:h-[641px] lg:flex-col lg:justify-start xl:mt-[100px]">
-            <div className="font-bebas text-7xl">Jack Reacher</div>
-            <div className="max-w-[540px] pr-6">
+        <div className="grid w-full max-w-7xl grid-cols-1 px-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="hidden w-full md:mt-16 md:block md:justify-start lg:col-span-2 lg:col-start-1 lg:flex lg:flex-col lg:items-center xl:mt-0">
+            {/* <div className="font-bebas text-7xl">Jack Reacher</div> */}
+            <div className="z-20 m-[mt-40] h-full w-full lg:max-w-3/4 xl:mt-20">
               <Profile />
             </div>
           </div>
@@ -100,16 +100,17 @@ export default function HomePage() {
               height={1026}
               unoptimized
             />
-            <div className="absolute bottom-0 left-0 right-0 z-10 h-32 bg-linear-to-t from-black to-transparent"></div>
+            <div className="absolute right-0 bottom-0 left-0 z-10 h-32 bg-linear-to-t from-black to-transparent"></div>
           </div>
         </div>
       </div>
-      <div className="z-10 mt-[-250px] h-full w-full px-6 pb-20 pt-10 md:hidden">
-        <Profile />
+      {/* mobile */}
+      <div className="z-10 mt-[-550px] h-full w-full md:hidden">
+        <Profile className="" />
       </div>
 
       {/* CARDS */}
-      <div className="z-10 flex w-full flex-col items-center justify-center md:mt-[-160px]">
+      <div className="z-10 flex w-full flex-col items-center justify-center md:mt-[-100px] lg:mt-[-50px] xl:mt-[-200px]">
         <div className="grid w-full max-w-7xl grid-rows-3 gap-6 p-6 pt-0 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-1">
           <Card className="border-0">
             <CardHeader>
@@ -119,7 +120,7 @@ export default function HomePage() {
               <CardDescription>Confirmed kills and counting.</CardDescription>
             </CardHeader>
             <CardContent className="text-zinc-200">
-              <div className="text-center font-sometype text-[9rem]">200</div>
+              <div className="font-sometype text-center text-[9rem]">200</div>
             </CardContent>
             {/* <CardFooter>
               <p>Card Footer</p>
