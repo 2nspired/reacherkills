@@ -2,6 +2,8 @@ import Image from "next/image";
 import Header from "~/app/(main)/_components/Header";
 import VideoBackground from "~/app/(main)/_components/VideoBackground";
 import Profile from "~/app/(main)/_components/Profile";
+import { VideoCard } from "~/app/(main)/_components/VideoCard";
+import LargeVideoCard from "~/app/(main)/_components/LargeVideoCard";
 import {
   Card,
   CardContent,
@@ -22,7 +24,7 @@ export default function HomePage() {
       <div className="h-[calc(100vh-112px)] max-h-[820px] min-h-[684px] md:max-h-[1024px] md:min-h-[1024px] lg:max-h-[1280px] lg:min-h-[1280px]">
         <div className="flex h-full w-full flex-col items-center justify-start">
           <div className="relative h-full max-h-[820px] w-full md:max-h-[1024px] lg:max-h-[1280px]">
-            <div className="absolute inset-0 z-0 scale-x-[-1] transform bg-[url('/reacher-images/reacher-2560x1440-06-alpha.png')] bg-cover bg-top 2xl:scale-x-[-1]" />
+            <div className="absolute inset-0 z-0 scale-x-[-1] transform bg-[url('/reacher-images/hero/reacher-2560x1440-06-alpha.png')] bg-cover bg-top 2xl:scale-x-[-1]" />
             <div className="absolute right-0 bottom-0 left-0 z-10 h-32 bg-linear-to-t from-black to-transparent"></div>
             <div className="relative z-20 h-full overflow-hidden">
               <div className="mx-auto flex h-full w-full max-w-7xl flex-col justify-between py-6">
@@ -84,9 +86,9 @@ export default function HomePage() {
       <div className="relative flex w-full min-w-screen flex-col items-center justify-center">
         <GridBackground />
         <div className="grid w-full max-w-7xl grid-cols-1 px-6 md:grid-cols-2 lg:grid-cols-3">
-          <div className="hidden w-full md:mt-16 md:block md:justify-start lg:col-span-2 lg:col-start-1 lg:flex lg:flex-col lg:items-center xl:mt-0">
+          <div className="hidden w-full md:block lg:col-span-2 lg:col-start-1 lg:flex lg:flex-col lg:items-center">
             {/* <div className="font-bebas text-7xl">Jack Reacher</div> */}
-            <div className="z-20 m-[mt-40] h-full w-full lg:max-w-3/4 xl:mt-20">
+            <div className="z-20 h-full w-full lg:max-w-3/4 xl:mt-10">
               <Profile />
             </div>
           </div>
@@ -156,7 +158,7 @@ export default function HomePage() {
             <CardContent className="flex flex-col space-y-3 text-zinc-200">
               <div className="flex flex-row items-center space-x-3">
                 <div className="w-10">Gun</div>
-                <div className="h-10 w-64 bg-zinc-200"></div>
+                <div className="h-10 w-48 bg-zinc-200"></div>
               </div>
               <div className="flex flex-row items-center space-x-3">
                 <div className="w-10">Knife</div>
@@ -176,16 +178,91 @@ export default function HomePage() {
             </CardFooter> */}
           </Card>
         </div>
+        {/* WORKING SECTION */}
+        {/* 
+
+
+
+
+
+
+
+
+
+ */}
+
+        <div className="mt-24 flex w-full flex-col">
+          <div className="flex w-full flex-col justify-evenly py-6">
+            <LargeVideoCard
+              title="Season 1"
+              subTitle="2022"
+              description="Margrave, GA was safe until a new hobo came to town"
+              // imageRef="/reacher-images/hero/reacher-1920x1080-02.png"
+            />
+            <LargeVideoCard
+              title="Season 2"
+              subTitle="2023"
+              description="Some other place is getting destroyed"
+              // imageRef="/reacher-images/hero/reacher-1920x1080-05.png"
+            />
+            <LargeVideoCard
+              title="Season 3"
+              subTitle="2024"
+              description="Margrave, GA was safe until a new hobo came to town"
+              // imageRef="/reacher-images/hero/reacher-1920x1080-04.png"
+            />
+          </div>
+
+          {/* <div className="flex flex-row justify-evenly bg-yellow-500/50">
+            <div className="w-full bg-green-500/50">Bad Guy Kills</div>
+            <div className="w-full bg-orange-500/50">Good Guy Kills</div>
+          </div>
+          <div className="py-3">Kills by Episode</div>
+          <div className="py-3">Kills by Teammates</div>
+          <div className="py-3">Kills by Bad Guys</div> */}
+        </div>
       </div>
-      <div className="flex flex-col items-center justify-center py-48">
+
+      {/* ABOVE ^^^^^^^ WORKING SECTION */}
+
+      {/* 
+
+
+
+
+
+
+
+       */}
+
+      <div className="flex flex-col items-center justify-center py-24">
         <div className="relative h-[300px] md:h-[400px] lg:h-[600px]">
           <VideoBackground
             video="/videos/reacher-s1-e1-lightening-long3.mp4"
+            play={true}
+            autoplay={true}
+            loop={true}
             // video="/videos/reacher-s1-e1-lightening-long.mp4"
             fallback="/videos/reacher-s1-e1-lightening.jpg"
           />
-          <div className="absolute inset-0 flex flex-col items-center justify-center"></div>
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            video
+          </div>
         </div>
+      </div>
+      <div className="flex-row-center my-24 space-x-6">
+        <VideoCard
+          title="Season 1"
+          description="One man. One toothbrush. A body count that says, “Don’t mess with the quiet guy.”"
+        />
+        <VideoCard
+          title="Season 2"
+          description="Revenge isn’t his goal. It’s just a side effect."
+        />
+        <VideoCard
+          title="Season 3"
+          description="No plan. No phone. Just hands."
+        />
       </div>
     </div>
   );
