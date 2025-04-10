@@ -8,8 +8,8 @@ export default function LargeVideoCard({
   title,
   subTitle,
   description,
-  totalDeaths = 25,
-  reacherKills = 20,
+  totalDeaths = 99,
+  reacherKills = 1,
   imageRef = "/videos/reacher-s1-e1-lightening.jpg",
   videoRef = "/videos/reacher-s1-e1-lightening-long3.mp4",
   className,
@@ -27,7 +27,7 @@ export default function LargeVideoCard({
 
   return (
     <div
-      className={`${className} hover:bg-range-200/30 relative flex aspect-square h-full w-full flex-col items-center transition-colors duration-200 ease-in-out md:aspect-video lg:max-h-[25vh]`}
+      className={`${className} hover:bg-range-200/30 relative flex h-full w-full flex-col items-center transition-colors duration-200 ease-in-out md:aspect-video lg:max-h-[40vh]`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

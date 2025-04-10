@@ -190,36 +190,41 @@ export default function HomePage() {
 
 
  */}
-
+        <div className="flex-col-center w-full">
+          <div className="flex w-full max-w-7xl flex-row justify-evenly bg-yellow-500/50 px-6">
+            <div className="w-full bg-green-500/50">Bad Guy Kills</div>
+            <div className="w-full bg-orange-500/50">Good Guy Kills</div>
+          </div>
+          <div className="py-3">Kills by Episode</div>
+          <div className="py-3">Kills by Teammates</div>
+          <div className="py-3">Kills by Bad Guys</div>
+        </div>
         <div className="mt-24 flex w-full flex-col">
           <div className="flex w-full flex-col justify-evenly py-6">
             <LargeVideoCard
               title="Season 1"
               subTitle="2022"
               description="Margrave, GA was safe until a new hobo came to town"
+              reacherKills={22}
+              totalDeaths={64}
+              imageRef="/reacher-images/hero/reacher-1920x1080-01.png"
               // imageRef="/reacher-images/hero/reacher-1920x1080-02.png"
             />
             <LargeVideoCard
               title="Season 2"
               subTitle="2023"
               description="Some other place is getting destroyed"
+              imageRef="/reacher-images/hero/reacher-1920x1080-02.png"
               // imageRef="/reacher-images/hero/reacher-1920x1080-05.png"
             />
             <LargeVideoCard
               title="Season 3"
               subTitle="2024"
               description="Margrave, GA was safe until a new hobo came to town"
+              imageRef="/reacher-images/hero/reacher-1920x1080-05.png"
               // imageRef="/reacher-images/hero/reacher-1920x1080-04.png"
             />
           </div>
-
-          {/* <div className="flex flex-row justify-evenly bg-yellow-500/50">
-            <div className="w-full bg-green-500/50">Bad Guy Kills</div>
-            <div className="w-full bg-orange-500/50">Good Guy Kills</div>
-          </div>
-          <div className="py-3">Kills by Episode</div>
-          <div className="py-3">Kills by Teammates</div>
-          <div className="py-3">Kills by Bad Guys</div> */}
         </div>
       </div>
 
