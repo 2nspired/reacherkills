@@ -75,6 +75,19 @@
   }
 }
 
+@theme inline {
+  --animate-move: move 5s linear infinite;
+
+  @keyframes move {
+    0% {
+      transform: translateX(-200px);
+    }
+    100% {
+      transform: translateX(200px);
+    }
+  }
+}
+
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
@@ -158,7 +171,10 @@
 }
 
 @layer utilities {
-  .flex-center {
+  .flex-col-center {
     @apply flex flex-col items-center justify-center;
+  }
+  .flex-row-center {
+    @apply flex flex-row items-center justify-center;
   }
 }
