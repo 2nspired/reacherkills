@@ -18,7 +18,7 @@ export default function Logo({ className }: { className?: string }) {
         onFocus={handleHover}
         className={`font-bebas tracking-wide ${className}`}
       >
-        <div className="flex flex-col pt-[5px] text-accent">REACHER</div>
+        <div className="text-accent flex flex-col pt-[5px]">REACHER</div>
         <Scrambler
           ref={scramblerRef}
           text="kills"

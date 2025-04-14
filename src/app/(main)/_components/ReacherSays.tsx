@@ -20,8 +20,8 @@ export default function ReacherSays() {
   }, []);
 
   return (
-    <div className="flex w-full flex-col items-center justify-center space-y-6 bg-cover bg-top">
-      <div className="w-full text-center font-bebas text-2xl tracking-wider md:text-3xl lg:text-5xl">
+    <div className="flex min-h-[130px] w-full flex-col items-center justify-between space-y-6 bg-cover bg-top">
+      <div className="font-bebas w-full text-center text-2xl tracking-wider md:text-3xl lg:text-5xl">
         <TextGenerateEffect
           key={quote}
           words={`"${quote}"`}

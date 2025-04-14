@@ -15,7 +15,7 @@ export default function Profile({ className }: { className?: string }) {
 
   // bg-[url('/texture/Paper_07.jpg')]
   return (
-    <div className={`${className} p-6 text-black md:p-0`}>
+    <div className={`${className} px-4 py-6 text-black md:px-8`}>
       {/*  */}
       <Accordion
         defaultValue={itemValue}
@@ -26,7 +26,7 @@ export default function Profile({ className }: { className?: string }) {
       >
         <AccordionItem
           value="item-1"
-          className={`font-sometype border-zinc-700/50 ${itemValue === "item-1" && "pb-3"} shadow-none transition-all duration-200 ease-in-out hover:shadow-sm`}
+          className={`font-sometype border-zinc-700/50 ${itemValue === "item-1" && "pb-3"} shadow-none transition-all duration-200 ease-in-out hover:shadow-md`}
         >
           <AccordionTrigger
             className={`rounded-b-sm px-6 pt-6 ${itemValue === "item-1" && "font-semibold"} inset-shadow-sm`}
@@ -62,7 +62,7 @@ export default function Profile({ className }: { className?: string }) {
         </AccordionItem>
         <AccordionItem
           value="item-2"
-          className={`font-sometype border-zinc-700/50 ${itemValue === "item-2" && "pb-3"} shadow-none transition-all duration-200 ease-in-out hover:shadow-sm`}
+          className={`font-sometype border-zinc-700/50 ${itemValue === "item-2" && "pb-3"} shadow-none transition-all duration-200 ease-in-out hover:shadow-md`}
         >
           <AccordionTrigger
             className={`rounded-b-sm px-6 pt-6 ${itemValue === "item-2" && "font-semibold"} inset-shadow-sm`}
@@ -112,7 +112,7 @@ export default function Profile({ className }: { className?: string }) {
         </AccordionItem>
         <AccordionItem
           value="item-3"
-          className={`font-sometype border-zinc-700/50 ${itemValue === "item-3" && "pb-3"} shadow-none transition-all duration-200 ease-in-out hover:shadow-sm`}
+          className={`font-sometype border-zinc-700/50 ${itemValue === "item-3" && "pb-3"} shadow-none transition-all duration-200 ease-in-out hover:shadow-md`}
         >
           <AccordionTrigger
             className={`rounded-b-sm px-6 pt-6 ${itemValue === "item-3" && "font-semibold"} inset-shadow-sm`}
@@ -129,7 +129,7 @@ export default function Profile({ className }: { className?: string }) {
         </AccordionItem>
         <AccordionItem
           value="item-4"
-          className={`font-sometype border-zinc-700/50 ${itemValue === "item-4" && "pb-3"} shadow-none transition-all duration-200 ease-in-out hover:shadow-sm`}
+          className={`font-sometype border-zinc-700/50 ${itemValue === "item-4" && "pb-3"} shadow-none transition-all duration-200 ease-in-out hover:shadow-md`}
         >
           <AccordionTrigger
             className={`rounded-b-sm px-6 pt-6 ${itemValue === "item-4" && "font-semibold"} inset-shadow-sm`}
@@ -163,7 +163,7 @@ export default function Profile({ className }: { className?: string }) {
         </AccordionItem>
         <AccordionItem
           value="item-5"
-          className={`font-sometype border-zinc-700/50 ${itemValue === "item-5" && "pb-3"} shadow-none transition-all duration-200 ease-in-out hover:shadow-sm`}
+          className={`font-sometype border-zinc-700/50 ${itemValue === "item-5" && "pb-3"} shadow-none transition-all duration-200 ease-in-out hover:shadow-md`}
         >
           <AccordionTrigger
             className={`rounded-b-sm px-6 pt-6 ${itemValue === "item-5" && "font-semibold"} inset-shadow-sm`}
