@@ -1,0 +1,196 @@
+import ReacherSays from "~/app/(main)/_components/ReacherSays";
+import Header from "~/app/(main)/_components/Header";
+import Profile from "~/app/(main)/_components/Profile";
+
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  // CardFooter,
+  CardHeader,
+  CardTitle,
+} from "~/components/ui/card";
+import Image from "next/image";
+
+export default function MainPage() {
+  return (
+    <main className="flex min-h-screen min-w-screen flex-col text-zinc-100">
+      {/* Header */}
+      <Header />
+
+      {/* Hero Section */}
+      <section className="w-full overflow-hidden px-4 md:px-8">
+        <div className="section-child relative h-[90vh] max-h-[64rem] min-h-[36rem] md:min-h-[60rem] lg:min-h-[50rem] xl:min-h-[910px]">
+          <div className="absolute inset-0 z-0 mt-18 scale-x-[-1] transform bg-[url('/reacher-images/hero/reacher-2560x1440-06-alpha.png')] mask-b-from-20% mask-b-to-80% bg-cover bg-top sm:mt-0 lg:mt-0 2xl:scale-x-[-1]" />
+          <div className="relative flex size-full flex-col justify-around">
+            <div>
+              <div className="font-bebas text-8xl leading-none font-bold tracking-wide md:text-[9rem] lg:text-[12rem]">
+                Reacher
+              </div>
+              <div className="text-accent font-bebas mt-[-20px] mb-[-10px] text-8xl leading-none font-bold tracking-wide md:text-[9rem] lg:text-[12rem]">
+                Kills
+              </div>
+              <div className="font-bebas text-4xl leading-[.90] tracking-wide sm:text-6xl lg:text-8xl">
+                <div>EVERY BAD GUY.</div>
+                <div>EVERY EPISODE.</div>
+              </div>
+            </div>
+            <div className="flex flex-col justify-end space-y-6">
+              <div>
+                <div className="font-bebas text-2xl tracking-wide sm:text-4xl md:text-4xl lg:text-5xl">
+                  SITREP
+                </div>
+                <div className="font-sometype max-w-[800px] text-sm md:text-base">
+                  A formidable ex–Military Police officer known only as Jack
+                  Reacher has been spotted dispensing vigilante justice across
+                  small-town America. Targets include corrupt businessmen, dirty
+                  cops, and any lowlife foolish enough to stand in his way.
+                  Collateral damage is minimal—but the body count is anything
+                  but.
+                </div>
+              </div>
+              <a
+                className="border-accent font-sometype max-w-44 rounded-lg border-2 bg-black/50 px-4 py-2 text-base font-semibold transition-all duration-300 ease-in-out hover:border-transparent hover:bg-zinc-200/50 hover:bg-none hover:text-zinc-50"
+                href="https://www.amazon.com/gp/video/detail/B09ML1GHXS/ref=atv_sr_fle_c_sr6eee57_1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B09ML111MB&qid=1742970427979"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Stream Season 3
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* MAIN CONTENT //START// */}
+
+      <div className="w-full">
+        {/* Quote Section */}
+
+        <section className="w-full">
+          <div className="section-child flex-col-center min-h-[40vw] p-6">
+            <div>
+              <ReacherSays />
+            </div>
+          </div>
+        </section>
+
+        {/* Profile Section */}
+
+        <section className="relative w-full">
+          <div className="absolute inset-0 bg-[url('/texture/Texture_22.jpg')] mask-y-from-70% mask-y-to-90% mask-r-from-30% mask-l-from-50% mask-l-to-90% opacity-40"></div>
+          <div className="section-child relative">
+            <div className="absolute inset-0 transform mask-b-from-20% mask-b-to-80% shadow-lg shadow-black md:mask-b-from-80% md:mask-b-to-100%">
+              <Image
+                // src="/reacher-images/reacher-1920x1080-02-alpha.png"
+                src="/reacher-images/character-profile/reacher-stats-426x1026-01-alpha.png"
+                alt="Reacher Image"
+                className="transform object-cover object-top md:ml-auto"
+                width={426}
+                height={1026}
+                unoptimized
+              />
+            </div>
+
+            <div className="pt-96 md:h-[850px] md:w-1/2 md:pt-0 lg:w-1/2">
+              <Profile className="relative z-10" />
+            </div>
+          </div>
+        </section>
+
+        {/* TOP STATS */}
+        <section className="w-full">
+          <div className="section-child">
+            <div className="z-10 flex w-full flex-col items-center justify-center">
+              <div className="grid w-full max-w-7xl grid-rows-3 gap-6 px-4 py-6 md:grid-cols-2 md:grid-rows-2 md:px-8 lg:grid-cols-3 lg:grid-rows-1">
+                <Card className="border-0">
+                  <CardHeader>
+                    <CardTitle className="font-bebas text-5xl tracking-wide text-zinc-200">
+                      REACHER BODY COUNT
+                    </CardTitle>
+                    <CardDescription>
+                      Confirmed kills and counting.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="text-zinc-200">
+                    <div className="font-sometype text-center text-[9rem]">
+                      200
+                    </div>
+                  </CardContent>
+                  {/* <CardFooter>
+              <p>Card Footer</p>
+            </CardFooter> */}
+                </Card>
+                <Card className="border-0">
+                  <CardHeader>
+                    <CardTitle className="font-bebas text-5xl tracking-wide text-zinc-200">
+                      METHODS
+                    </CardTitle>
+                    <CardDescription>
+                      Why use a gun when your fists do the talking?
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex flex-row items-center justify-center text-zinc-200">
+                    <div className="-mt-[20px] flex h-48 w-48 items-center justify-center rounded-full border-[20px]">
+                      [donut graph]
+                    </div>
+                  </CardContent>
+                  {/* <CardFooter>
+              <p>Card Footer</p>
+            </CardFooter> */}
+                </Card>
+                <Card className="border-0">
+                  <CardHeader>
+                    <CardTitle className="font-bebas text-5xl tracking-wide text-zinc-200">
+                      TOP WEAPONS
+                    </CardTitle>
+                    <CardDescription>
+                      Improvised or intentional, it’s always fatal.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex flex-col space-y-3 text-zinc-200">
+                    <div className="flex flex-row items-center space-x-3">
+                      <div className="w-10">Gun</div>
+                      <div className="h-10 w-48 bg-zinc-200"></div>
+                    </div>
+                    <div className="flex flex-row items-center space-x-3">
+                      <div className="w-10">Knife</div>
+                      <div className="h-10 w-48 bg-zinc-200"></div>
+                    </div>
+                    <div className="flex flex-row items-center space-x-3">
+                      <div className="w-10">Hands</div>
+                      <div className="h-10 w-36 bg-zinc-200"></div>
+                    </div>
+                    <div className="flex flex-row items-center space-x-3">
+                      <div className="w-10">other</div>
+                      <div className="h-10 w-28 bg-zinc-200"></div>
+                    </div>
+                  </CardContent>
+                  {/* <CardFooter>
+              <p>Card Footer</p>
+            </CardFooter> */}
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Season Section */}
+
+        <section className="w-full">
+          <div className="section-child bg-yellow-500/50">Season Details</div>
+        </section>
+
+        {/* Boss Section */}
+
+        <section className="w-full">
+          <div className="section-child bg-indigo-500/50">Boss Details</div>
+        </section>
+      </div>
+
+      <footer className="w-full bg-zinc-700">
+        <div className="section-child bg-red-500/50">Footer</div>
+      </footer>
+    </main>
+  );
+}

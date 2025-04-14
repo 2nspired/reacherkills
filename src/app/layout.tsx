@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body
-        className={`${GeistSans.variable} ${bebas.variable} ${sometype.variable} h-full bg-black font-sans antialiased`}
+        className={`${GeistSans.variable} ${bebas.variable} ${sometype.variable} min-h-screen bg-black font-sans antialiased`}
       >
         {children}
       </body>

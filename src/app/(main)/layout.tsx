@@ -15,8 +15,6 @@ export default async function MainLayout({ children }: LayoutProps) {
 
   return (
     <>
-      {/* <div className="flex h-full min-h-full w-full flex-col bg-[#010306] text-white"> */}
-      {/* <div className="flex min-h-screen w-full flex-col bg-linear-to-r from-[#010306] to-[#0A0F14] text-white"> */}
       <div className="flex min-h-screen w-full flex-col bg-black text-white">
         {isDev && !isProd && <DevWindowBreakpoint />}
         <main className="flex grow flex-col items-center">{children}</main>

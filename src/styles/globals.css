@@ -177,4 +177,7 @@
   .flex-row-center {
     @apply flex flex-row items-center justify-center;
   }
+  .section-child {
+    @apply mx-auto max-w-7xl;
+  }
 }
