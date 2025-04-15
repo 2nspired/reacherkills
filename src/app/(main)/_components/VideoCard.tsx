@@ -1,47 +1,81 @@
 "use client";
-import { cn } from "~/lib/utils";
 
-export function VideoCard({
+import { useState } from "react";
+import Skull from "~/app/(main)/_components/svg/SkullCross";
+import VideoBackground from "~/app/(main)/_components/VideoBackground";
+
+export default function VideoCard({
   title,
+  subtitle,
   description,
-  bgImage = "https://images.unsplash.com/photo-1476842634003-7dcca8f832de?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-  bgVideo = "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWlodTF3MjJ3NnJiY3Rlc2J0ZmE0c28yeWoxc3gxY2VtZzA5ejF1NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/syEfLvksYQnmM/giphy.gif",
+  totalDeaths = 99,
+  reacherKills = 1,
+  imageRef = "/videos/reacher-s1-e1-lightening.jpg",
+  videoRef = "/videos/reacher-s1-e1-lightening-long3.mp4",
+  className,
 }: {
   title?: string;
+  subtitle?: string;
   description?: string;
-  bgImage?: string;
-  bgVideo?: string;
+  totalDeaths?: number;
+  reacherKills?: number;
+  imageRef?: string;
+  videoRef?: string;
+  className?: string;
 }) {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div className="w-full max-w-xs">
-      <div
-        className={cn(
-          "group card relative mx-auto flex h-96 w-full cursor-pointer flex-col justify-end overflow-hidden rounded-md border border-transparent p-4 shadow-xl dark:border-neutral-800",
-          "transition-all duration-500",
-        )}
-        style={{
-          backgroundImage: `url(${bgImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div
-          className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-          style={{
-            backgroundImage: `url(${bgVideo})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+    <div
+      className={`${className} hover:bg-range-200/30 relative flex h-full w-full flex-col items-center transition-colors duration-200 ease-in-out md:aspect-video lg:max-h-[40vh]`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="absolute inset-0 z-0 mask-b-from-60% mask-b-to-100% bg-cover bg-bottom-left md:mask-t-from-100% md:mask-t-to-0 lg:bg-center">
+        <VideoBackground
+          video={videoRef}
+          fallback={imageRef}
+          autoplay={isHovered}
+          play={isHovered}
+          loop={true}
         />
-        <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-500 group-hover:opacity-50" />
-        <div className="text relative z-50">
-          <h1 className="relative text-xl font-bold text-gray-50 md:text-3xl">
+      </div>
+
+      {/* Backdrop blur bottom */}
+      <div className="absolute inset-x-0 bottom-0 z-5 h-1/3 mask-t-from-70% backdrop-blur-md"></div>
+
+      <div className="relative z-10 flex h-full w-full max-w-7xl flex-col-reverse items-start justify-between md:flex-row md:items-end">
+        <div className="flex w-full flex-col p-6 md:min-h-2/5 md:w-2/3">
+          <div className="text-accent text-2xl font-bold md:text-4xl">
             {title}
-          </h1>
-          <p className="relative my-4 min-h-24 text-base font-normal text-gray-50">
-            {description}
-          </p>
+          </div>
+          <div className="py-1">{subtitle}</div>
+          <div className="py-1">{description}</div>
         </div>
+        {/* <div className="z-10 flex flex-col items-end self-end pt-6 md:min-h-2/5 md:min-w-1/3">
+          <div className="md:backdrop-blue-none mr-6 flex w-fit flex-col justify-end rounded-lg bg-zinc-900/50 px-6 pt-4 pb-3 backdrop-blur-xs md:bg-transparent">
+            <div className="flex flex-row items-center space-x-2">
+              <div className="md:hidden">
+                <Skull fill="#FFFFFF" className="size-8 fill-zinc-200" />
+              </div>
+              <div className="hidden md:block">
+                <Skull fill="#FFFFFF" className="size-12 fill-zinc-200" />
+              </div>
+              <div className="font-sometype text-[2.5rem] leading-none font-bold md:text-[3rem]">
+                {totalDeaths}
+              </div>
+            </div>
+            <div className="flex w-fit flex-row items-center space-x-2 text-zinc-200">
+              <div className="font-bebas tracking-none flex flex-row p-1 pt-2 text-[2rem] leading-none md:text-[3rem]">
+                <div className="">R</div>
+                <div className="text-accent">K</div>
+              </div>
+              <div className="font-sometype text-[2rem] leading-none font-bold md:text-[3rem]">
+                {reacherKills}
+              </div>
+            </div>
+          </div>
+        </div> */}
       </div>
     </div>
   );

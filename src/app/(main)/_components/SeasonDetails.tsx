@@ -1,4 +1,4 @@
-import LargeVideoCard from "./LargeVideoCard";
+import LargeVideoCard from "./VideoCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import Skull from "~/app/(main)/_components/svg/SkullCross";
 import {
@@ -118,7 +118,7 @@ export default function SeasonDetails() {
         <LargeVideoCard
           className="lg:min-h-[600px]"
           title={`Season ${testData.Season}`}
-          subTitle={testData.Year.toString()}
+          subtitle={testData.Year.toString()}
           description={testData.shortSummary}
           reacherKills={testData.TotalReacherKills}
           totalDeaths={testData.TotalDeaths}
