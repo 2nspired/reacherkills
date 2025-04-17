@@ -40,12 +40,10 @@ const Episode = ({
       .map(([killer]) => killer)[0],
   };
 
-  // Format mostUsedWeapon for display
   const formattedWeapons = Object.entries(deathStats.mostUsedWeapon)
     .map(([weapon, count]) => `${weapon}: ${count}`)
     .join(", ");
 
-  // RENDER
   return (
     <div className="flex flex-col space-y-3">
       <div className="flex flex-row items-center justify-between space-x-3">
@@ -60,9 +58,7 @@ const Episode = ({
           <div>{`Total Kills: ${deathStats.totalDeaths}`}</div>
           <div>{`Reacher Kills: ${deathStats.reacherKills}`}</div>
           <div>{`Most Kills: ${deathStats.deadliestCharacter}`}</div>
-          <div>{`Weapons: ${formattedWeapons}`}</div>{" "}
-          {/* Use formattedWeapons */}
-          <div></div>
+          <div>{`Weapons: ${formattedWeapons}`}</div> <div></div>
         </div>
       </div>
       <div className="space-y-2 text-sm md:text-base">
