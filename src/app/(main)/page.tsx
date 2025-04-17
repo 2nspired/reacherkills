@@ -1,6 +1,9 @@
 import ReacherSays from "~/app/(main)/_components/ReacherSays";
 import Header from "~/app/(main)/_components/Header";
 import Profile from "~/app/(main)/_components/Profile";
+import SeasonDetailsOverlay from "./_components/SeasonDetailsOverlay";
+
+import VidCard from "./_components/VidCard";
 
 import {
   Card,
@@ -177,8 +180,28 @@ export default function MainPage() {
 
         {/* Season Section */}
 
-        <section className="w-full">
-          <div className="section-child bg-yellow-500/50">Season Details</div>
+        <section className="w-full py-20">
+          {/* <VidCard
+            title="Season Stats"
+            subtitle="2022"
+            description="Framed in Georgia. Corruption. Reacher hits back."
+            className="aspect-square min-h-60 sm:min-h-96"
+            video="/videos/reacher-s1-e1-lightening-long3.mp4"
+            image="/videos/reacher-s1-e1-lightening.jpg"
+          /> */}
+
+          <SeasonDetailsOverlay seasonNum={1} className="">
+            <div>
+              <VidCard
+                title="Season Stats"
+                subtitle="2022"
+                description="Framed in Georgia. Corruption. Reacher hits back."
+                className="aspect-square max-h-24 min-h-60 md:max-h-[30vw]"
+                video="/videos/reacher-s1-e1-lightening-long3.mp4"
+                image="/videos/reacher-s1-e1-lightening.jpg"
+              />
+            </div>
+          </SeasonDetailsOverlay>
         </section>
 
         {/* Boss Section */}
@@ -188,7 +211,7 @@ export default function MainPage() {
         </section>
       </div>
 
-      <footer className="w-full bg-zinc-700">
+      <footer className="w-full">
         <div className="section-child bg-red-500/50">Footer</div>
       </footer>
     </main>
