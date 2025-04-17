@@ -34,11 +34,11 @@ export default function VideoBackground({
   }, [playStatus]);
 
   return (
-    <div className="relative z-0 h-full w-full">
+    <div className="relative z-0 h-full w-full rounded">
       <Image
         src={fallback}
         alt={fallbackAlt ?? "Video background"}
-        className="relative min-h-full min-w-full object-cover"
+        className="relative min-h-full min-w-full rounded object-cover"
         height={1351}
         width={3840}
         priority={true}
@@ -51,7 +51,7 @@ export default function VideoBackground({
         loop={loop}
         muted
         playsInline
-        className={`absolute top-0 min-h-full min-w-full object-cover opacity-0 transition-opacity duration-500 ${
+        className={`absolute top-0 min-h-full min-w-full rounded object-cover opacity-0 transition-opacity duration-500 ${
           playStatus && !viewed ? "opacity-100" : "opacity-0"
         }`}
         height={1351}
@@ -65,7 +65,7 @@ export default function VideoBackground({
         <Image
           src={fallback}
           alt={fallbackAlt ?? "Video background"}
-          className="min-h-full min-w-full object-cover"
+          className="min-h-full min-w-full rounded object-cover"
           height={1351}
           width={3840}
           priority={true}

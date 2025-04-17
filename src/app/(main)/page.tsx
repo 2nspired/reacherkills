@@ -14,7 +14,6 @@ import {
   CardTitle,
 } from "~/components/ui/card";
 import Image from "next/image";
-import VideoCard from "~/app/(main)/_components/VideoCard";
 
 export default function MainPage() {
   return (
@@ -191,13 +190,13 @@ export default function MainPage() {
             image="/videos/reacher-s1-e1-lightening.jpg"
           /> */}
 
-          <SeasonDetailsOverlay season={1} className="">
+          <SeasonDetailsOverlay seasonNum={1} className="">
             <div>
               <VidCard
                 title="Season Stats"
                 subtitle="2022"
                 description="Framed in Georgia. Corruption. Reacher hits back."
-                className="aspect-square min-h-60 sm:min-h-96 md:max-h-[30vw]"
+                className="aspect-square max-h-24 min-h-60 md:max-h-[30vw]"
                 video="/videos/reacher-s1-e1-lightening-long3.mp4"
                 image="/videos/reacher-s1-e1-lightening.jpg"
               />

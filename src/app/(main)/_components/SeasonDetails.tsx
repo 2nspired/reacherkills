@@ -4,12 +4,12 @@ import Skull from "~/app/(main)/_components/svg/SkullCross";
 import {
   Table,
   TableBody,
-  // TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "~/components/ui/table";
+import Image from "next/image";
 
 const testData = {
   Season: 1,
@@ -88,29 +88,6 @@ const testData = {
   ],
 };
 
-type Episode = {
-  episode: number;
-  Title: string;
-  heroImage: string;
-  VideoRef: string;
-  Deaths: number;
-  ReacherKills: number;
-};
-type EpisodeList = {
-  Episodes: Episode[];
-};
-
-type Season = {
-  Season: number;
-  Year: number;
-  TotalDeaths: number;
-  TotalReacherKills: number;
-  TotalEpisodes: number;
-  shortSummary: string;
-  longSummary: string;
-  Episodes: EpisodeList[];
-};
-
 export default function SeasonDetails() {
   return (
     <div className="flex max-h-[900px] w-full flex-col items-center lg:max-h-none">
@@ -120,11 +97,8 @@ export default function SeasonDetails() {
           title={`Season ${testData.Season}`}
           subtitle={testData.Year.toString()}
           description={testData.shortSummary}
-          reacherKills={testData.TotalReacherKills}
-          totalDeaths={testData.TotalDeaths}
           videoRef="/videos/reacher-s1-e1-lightening-long3.mp4"
           imageRef="/reacher-images/hero/reacher-1920x1080-01.png"
-          // imageRef="/reacher-images/hero/reacher-1920x1080-02.png"
         />
       </div>
       <div className="min-h-full w-full max-w-7xl">
@@ -137,7 +111,6 @@ export default function SeasonDetails() {
             </TabsList>
             <TabsContent className="w-full grow" value="season1">
               <div className="flex w-full grow flex-col lg:flex-row">
-                {/* <Episodes /> */}
                 <EpisodeList />
                 <div className="bg-blue-500/50 p-6 text-right lg:w-1/3">
                   TOP KILLERS
@@ -152,8 +125,6 @@ export default function SeasonDetails() {
             </TabsContent>
           </Tabs>
         </div>
-
-        {/* TODO: collapsable container for mobile, maybe even desktop.*/}
       </div>
     </div>
   );
@@ -163,7 +134,6 @@ const EpisodeList = () => {
   return (
     <div className="grow p-6 text-left">
       <Table>
-        {/* <TableCaption>A list of your recent invoices.</TableCaption> */}
         <TableHeader>
           <TableRow className="border-none">
             <TableHead className="text-white"></TableHead>
@@ -197,9 +167,11 @@ const EpisodeList = () => {
                 </div>
               </TableCell>
               <TableCell className="hidden font-medium md:table-cell">
-                <img
+                <Image
                   src={episode.heroImage}
                   alt={episode.Title}
+                  width={500}
+                  height={300}
                   className="size-full rounded-lg"
                 />
               </TableCell>
@@ -220,52 +192,3 @@ const EpisodeList = () => {
     </div>
   );
 };
-
-// -----------------------------------------------
-// LEFTOVERS
-// -----------------------------------------------
-const Episodes = () => {
-  return (
-    <div className="flex-col-center size-full bg-red-500">
-      <div className="grid w-full grid-cols-4 bg-blue-500/50 py-3 pb-6 md:grid-cols-5">
-        <div className="w-36 bg-red-500">episode</div>
-        <div className="hidden md:block">thumbnail</div>
-        <div className="">name</div>
-        <div className="">deaths</div>
-        <div className="">reacher</div>
-      </div>
-      {testData.Episodes.map((episode) => (
-        <div
-          key={episode.episode}
-          className="grid w-full grid-cols-4 bg-blue-500/50 md:grid-cols-5"
-        >
-          <div className="flex-col-center">
-            <div className="flex-col-center size-10 rounded-full border-2 font-semibold">
-              {episode.episode}
-            </div>
-          </div>
-          <div className="hidden md:block">
-            <img
-              src={episode.heroImage}
-              alt={episode.Title}
-              className="size-full rounded-lg"
-            />
-          </div>
-          <div className="">name</div>
-          <div className="">deaths</div>
-          <div className="">reacher</div>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-{
-  /* <div className="hidden font-medium md:table-cell">
-                  <img
-                    src={episode.heroImage}
-                    alt={episode.Title}
-                    className="size-full rounded-lg"
-                  />
-                  </div> */
-}

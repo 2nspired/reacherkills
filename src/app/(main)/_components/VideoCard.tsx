@@ -1,15 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import Skull from "~/app/(main)/_components/svg/SkullCross";
 import VideoBackground from "~/app/(main)/_components/VideoBackground";
 
 export default function VideoCard({
   title,
   subtitle,
   description,
-  totalDeaths = 99,
-  reacherKills = 1,
   imageRef = "/videos/reacher-s1-e1-lightening.jpg",
   videoRef = "/videos/reacher-s1-e1-lightening-long3.mp4",
   className,
@@ -17,8 +14,6 @@ export default function VideoCard({
   title?: string;
   subtitle?: string;
   description?: string;
-  totalDeaths?: number;
-  reacherKills?: number;
   imageRef?: string;
   videoRef?: string;
   className?: string;
@@ -52,30 +47,6 @@ export default function VideoCard({
           <div className="py-1">{subtitle}</div>
           <div className="py-1">{description}</div>
         </div>
-        {/* <div className="z-10 flex flex-col items-end self-end pt-6 md:min-h-2/5 md:min-w-1/3">
-          <div className="md:backdrop-blue-none mr-6 flex w-fit flex-col justify-end rounded-lg bg-zinc-900/50 px-6 pt-4 pb-3 backdrop-blur-xs md:bg-transparent">
-            <div className="flex flex-row items-center space-x-2">
-              <div className="md:hidden">
-                <Skull fill="#FFFFFF" className="size-8 fill-zinc-200" />
-              </div>
-              <div className="hidden md:block">
-                <Skull fill="#FFFFFF" className="size-12 fill-zinc-200" />
-              </div>
-              <div className="font-sometype text-[2.5rem] leading-none font-bold md:text-[3rem]">
-                {totalDeaths}
-              </div>
-            </div>
-            <div className="flex w-fit flex-row items-center space-x-2 text-zinc-200">
-              <div className="font-bebas tracking-none flex flex-row p-1 pt-2 text-[2rem] leading-none md:text-[3rem]">
-                <div className="">R</div>
-                <div className="text-accent">K</div>
-              </div>
-              <div className="font-sometype text-[2rem] leading-none font-bold md:text-[3rem]">
-                {reacherKills}
-              </div>
-            </div>
-          </div>
-        </div> */}
       </div>
     </div>
   );
