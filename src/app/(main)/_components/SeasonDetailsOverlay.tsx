@@ -42,13 +42,13 @@ export default function SeasonDetailsOverlay({
   className?: string;
   children?: React.ReactNode;
 }) {
-  const [seasonSelected, setSeasonSelected] = useState(seasonNum ?? 1);
-  console.log("seasonSelected", seasonSelected);
+  const [seasonSelect, setSeasonSelect] = useState(seasonNum ?? 1);
+
   const [open, setOpen] = useState(false);
 
   const seasonData = {
-    season: seasonsData.find((season) => season.season === seasonSelected) && {
-      ...seasonsData.find((season) => season.season === seasonSelected),
+    season: seasonsData.find((season) => season.season === seasonSelect) && {
+      ...seasonsData.find((season) => season.season === seasonSelect),
       deadliestCharacters: Object.entries(
         deathsData
           .map((death) => death.killer)
@@ -65,19 +65,19 @@ export default function SeasonDetailsOverlay({
             return acc;
           }, {}),
       ).reduce((a, b) => (a[1] > b[1] ? a : b))[0],
-      totalDeaths: deathsData.filter((death) => death.season === seasonSelected)
+      totalDeaths: deathsData.filter((death) => death.season === seasonSelect)
         .length,
       reacherKills: deathsData.filter(
         (death) =>
-          death.season === seasonSelected && death.killer === "Jack Reacher",
+          death.season === seasonSelect && death.killer === "Jack Reacher",
       ).length,
       totalEpisodes: episodesData.filter(
-        (episode) => episode.season === seasonSelected,
+        (episode) => episode.season === seasonSelect,
       ).length,
     },
 
     episodes: episodesData
-      .filter((episode) => episode.season === seasonSelected)
+      .filter((episode) => episode.season === seasonSelect)
       .map((episode) => ({
         ...episode,
         deadliestCharacter: Object.entries(
@@ -137,7 +137,7 @@ export default function SeasonDetailsOverlay({
                 <div className="pb-3">
                   <Select
                     defaultValue={seasonNum?.toString()}
-                    onValueChange={(value) => setSeasonSelected(Number(value))}
+                    onValueChange={(value) => setSeasonSelect(Number(value))}
                   >
                     <SelectTrigger className="w-28 border-zinc-700">
                       <SelectValue />
@@ -165,8 +165,8 @@ export default function SeasonDetailsOverlay({
                     .filter((episode) => episode.season === 1)
                     .map((episode) => (
                       <Episode
-                        key={`s${seasonSelected}-e${episode.episode}`}
-                        seasonNum={seasonSelected}
+                        key={`s${seasonSelect}-e${episode.episode}`}
+                        seasonNum={seasonSelect}
                         episodeNum={episode.episode}
                       />
                     ))}
