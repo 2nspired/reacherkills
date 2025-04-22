@@ -2,8 +2,8 @@
 import ReacherSays from "~/app/(main)/_components/ReacherSays";
 import Profile from "~/app/(main)/_components/Profile";
 import Image from "next/image";
-import Header from "../(main)/_components/Header";
-import SeasonDetails from "../(main)/_components/SeasonDetails";
+import Header from "~/app/(main)/_components/Header";
+import SeasonDetails from "~/app/(main)/_components/season/SeasonDetails";
 import GridBackground from "../(main)/_components/GridBackground";
 
 import {

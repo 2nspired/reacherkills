@@ -1,7 +1,7 @@
 import ReacherSays from "~/app/(main)/_components/ReacherSays";
 import Header from "~/app/(main)/_components/Header";
 import Profile from "~/app/(main)/_components/Profile";
-import SeasonDetailsOverlay from "./_components/SeasonDetailsOverlay";
+import SeasonDetailsOverlay from "~/app/(main)/_components/season/SeasonDetailsOverlay";
 import CareerStats from "~/app/(main)/_components/CareerStats";
 import VidCard from "~/app/(main)/_components/VidCard";
 
@@ -15,8 +15,8 @@ import {
 } from "~/components/ui/card";
 import Image from "next/image";
 import { getReacherStats } from "~/utilities/data-helpers";
-import MethodsPieChart from "./_components/MethodsPieChart";
-import { WeaponsBarChartMixed } from "./_components/WeaponsBarChartMixed";
+import MethodsPieChart from "./_components/stats/MethodsPieChart";
+import { WeaponsBarChartMixed } from "./_components/stats/WeaponsBarChartMixed";
 
 export default function MainPage() {
   const reacherStats = getReacherStats();
@@ -90,10 +90,9 @@ export default function MainPage() {
           <div className="section-child relative">
             <div className="absolute inset-0 transform mask-b-from-20% mask-b-to-80% shadow-lg shadow-black md:mask-b-from-80% md:mask-b-to-100%">
               <Image
-                // src="/reacher-images/reacher-1920x1080-02-alpha.png"
                 src="/reacher-images/character-profile/reacher-stats-426x1026-01-alpha.png"
                 alt="Reacher Image"
-                className="transform object-cover object-top md:ml-auto"
+                className="w-auto transform md:ml-auto"
                 width={426}
                 height={1026}
                 unoptimized
