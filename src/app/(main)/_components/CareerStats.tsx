@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getReacherStats } from "~/utilities/data-helpers";
-import { RKLineChart } from "~/app/(main)/_components/RKLineChart";
+import { RKLineChart } from "~/app/(main)/_components/stats/RKLineChart";
 
 const CareerStats = () => {
   const reacherStats = getReacherStats();
@@ -145,7 +145,8 @@ const WeaponCard = ({
         <Image
           src={`/icons/${weapon}.png`}
           fill
-          objectFit="contain"
+          sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+          className="object-contain"
           alt={weapon}
         />
       </div>
