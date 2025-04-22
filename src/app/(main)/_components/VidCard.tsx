@@ -46,7 +46,7 @@ export default function VidCard({
   return (
     <div
       className={`${className} z-0 flex flex-col items-center justify-center`}
-      style={{ position: "relative", width: "100%", height: "100%" }}
+      style={{ position: "relative", width: "100%", height: "100%" }} // Ensure position is relative
     >
       <Image
         src={image}
@@ -75,14 +75,16 @@ export default function VidCard({
             setViewed(true);
           }}
         >
-          <Image
-            src={image}
-            alt={altText ?? "Video background"}
-            className="h-full w-full object-fill"
-            fill
-            priority={true}
-            unoptimized
-          />
+          <div style={{ position: "relative", width: "100%", height: "100%" }}>
+            <Image
+              src={image}
+              alt={altText ?? "Video background"}
+              className="h-full w-full object-fill"
+              fill
+              priority={true}
+              unoptimized
+            />
+          </div>
         </video>
       </div>
       {(title ?? subtitle ?? description) && (
