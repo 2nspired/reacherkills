@@ -2,8 +2,8 @@ import ReacherSays from "~/app/(main)/_components/ReacherSays";
 import Header from "~/app/(main)/_components/Header";
 import Profile from "~/app/(main)/_components/Profile";
 import SeasonDetailsOverlay from "./_components/SeasonDetailsOverlay";
-
-import VidCard from "./_components/VidCard";
+import CareerStats from "~/app/(main)/_components/CareerStats";
+import VidCard from "~/app/(main)/_components/VidCard";
 
 import {
   Card,
@@ -14,8 +14,13 @@ import {
   CardTitle,
 } from "~/components/ui/card";
 import Image from "next/image";
+import { getReacherStats } from "~/utilities/data-helpers";
+import MethodsPieChart from "./_components/MethodsPieChart";
+import { WeaponsBarChartMixed } from "./_components/WeaponsBarChartMixed";
 
 export default function MainPage() {
+  const reacherStats = getReacherStats();
+
   return (
     <main className="flex min-h-screen min-w-screen flex-col text-zinc-100">
       {/* Header */}
@@ -106,25 +111,25 @@ export default function MainPage() {
           <div className="section-child">
             <div className="z-10 flex w-full flex-col items-center justify-center">
               <div className="grid w-full max-w-7xl grid-rows-3 gap-6 px-4 py-6 md:grid-cols-2 md:grid-rows-2 md:px-8 lg:grid-cols-3 lg:grid-rows-1">
-                <Card className="border-0">
+                <Card className="gap-0 border-0">
                   <CardHeader>
                     <CardTitle className="font-bebas text-5xl tracking-wide text-zinc-200">
-                      REACHER BODY COUNT
+                      BODY COUNT
                     </CardTitle>
                     <CardDescription>
                       Confirmed kills and counting.
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="text-zinc-200">
-                    <div className="font-sometype text-center text-[9rem]">
-                      200
+                    <div className="font-sometype text-center text-[10rem]">
+                      {reacherStats.totalRK}
                     </div>
                   </CardContent>
                   {/* <CardFooter>
               <p>Card Footer</p>
             </CardFooter> */}
                 </Card>
-                <Card className="border-0">
+                <Card className="gap-0 border-0">
                   <CardHeader>
                     <CardTitle className="font-bebas text-5xl tracking-wide text-zinc-200">
                       METHODS
@@ -134,9 +139,7 @@ export default function MainPage() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="flex flex-row items-center justify-center text-zinc-200">
-                    <div className="-mt-[20px] flex h-48 w-48 items-center justify-center rounded-full border-[20px]">
-                      [donut graph]
-                    </div>
+                    <MethodsPieChart />
                   </CardContent>
                   {/* <CardFooter>
               <p>Card Footer</p>
@@ -151,23 +154,8 @@ export default function MainPage() {
                       Improvised or intentional, it’s always fatal.
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="flex flex-col space-y-3 text-zinc-200">
-                    <div className="flex flex-row items-center space-x-3">
-                      <div className="w-10">Gun</div>
-                      <div className="h-10 w-48 bg-zinc-200"></div>
-                    </div>
-                    <div className="flex flex-row items-center space-x-3">
-                      <div className="w-10">Knife</div>
-                      <div className="h-10 w-48 bg-zinc-200"></div>
-                    </div>
-                    <div className="flex flex-row items-center space-x-3">
-                      <div className="w-10">Hands</div>
-                      <div className="h-10 w-36 bg-zinc-200"></div>
-                    </div>
-                    <div className="flex flex-row items-center space-x-3">
-                      <div className="w-10">other</div>
-                      <div className="h-10 w-28 bg-zinc-200"></div>
-                    </div>
+                  <CardContent className="flex flex-col px-0 text-zinc-200">
+                    <WeaponsBarChartMixed />
                   </CardContent>
                   {/* <CardFooter>
               <p>Card Footer</p>
@@ -176,6 +164,10 @@ export default function MainPage() {
               </div>
             </div>
           </div>
+        </section>
+
+        <section className="flex-col-center w-full py-20 md:px-8">
+          <CareerStats />
         </section>
 
         {/* Season Section */}
