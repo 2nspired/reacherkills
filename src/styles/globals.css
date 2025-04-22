@@ -180,4 +180,16 @@
   .section-child {
     @apply mx-auto max-w-7xl;
   }
+  .bebas-lg {
+    @apply font-bebas text-5xl tracking-wide;
+  }
+  .bebas-md {
+    @apply font-bebas text-4xl tracking-wide;
+  }
+  .bebas-sm {
+    @apply font-bebas text-3xl tracking-wide;
+  }
+  .bebas-xs {
+    @apply font-bebas text-2xl tracking-wide;
+  }
 }
