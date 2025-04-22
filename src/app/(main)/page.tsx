@@ -197,13 +197,23 @@ export default function MainPage() {
 
         {/* Boss Section */}
 
-        <section className="w-full">
+        {/* <section className="w-full">
           <div className="section-child bg-indigo-500/50">Boss Details</div>
-        </section>
+        </section> */}
       </div>
 
-      <footer className="w-full">
-        <div className="section-child bg-red-500/50">Footer</div>
+      <footer className="bg-accent mt-20 w-full">
+        <div className="section-child">
+          <div className="flex-row-center space-x-2 py-10 text-sm font-semibold text-zinc-900">
+            <div className="-skew-x-12 bg-zinc-900 px-3 py-1 text-zinc-200">
+              <div className="skew-x-12 italic"> Fan project.</div>
+            </div>
+            <div>
+              No affiliation with Reacher or its rights holders. All trademarks
+              and copyrights belong to their respective owners.
+            </div>
+          </div>
+        </div>
       </footer>
     </main>
   );
