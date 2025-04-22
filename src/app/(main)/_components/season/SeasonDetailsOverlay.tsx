@@ -22,8 +22,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "~/components/ui/select";
-
-import Episode from "./Episode";
+import Episode from "~/app/(main)/_components/season/Episode";
 
 const description = `When retired Military Police Officer Jack Reacher is arrested
                 for a murder he did not commit, he finds himself in the middle
