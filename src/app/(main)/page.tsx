@@ -1,9 +1,10 @@
 import ReacherSays from "~/app/(main)/_components/ReacherSays";
 import Header from "~/app/(main)/_components/Header";
 import Profile from "~/app/(main)/_components/Profile";
-import SeasonDetailsOverlay from "./_components/SeasonDetailsOverlay";
-
-import VidCard from "./_components/VidCard";
+import SeasonDetailsOverlay from "~/app/(main)/_components/season/SeasonDetailsOverlay";
+import CareerStats from "~/app/(main)/_components/CareerStats";
+import VidCard from "~/app/(main)/_components/VidCard";
+import { TbBrandGithubFilled } from "react-icons/tb";
 
 import {
   Card,
@@ -14,8 +15,13 @@ import {
   CardTitle,
 } from "~/components/ui/card";
 import Image from "next/image";
+import { getReacherStats } from "~/utilities/data-helpers";
+import MethodsPieChart from "./_components/stats/MethodsPieChart";
+import { WeaponsBarChartMixed } from "./_components/stats/WeaponsBarChartMixed";
 
 export default function MainPage() {
+  const reacherStats = getReacherStats();
+
   return (
     <main className="flex min-h-screen min-w-screen flex-col text-zinc-100">
       {/* Header */}
@@ -85,10 +91,9 @@ export default function MainPage() {
           <div className="section-child relative">
             <div className="absolute inset-0 transform mask-b-from-20% mask-b-to-80% shadow-lg shadow-black md:mask-b-from-80% md:mask-b-to-100%">
               <Image
-                // src="/reacher-images/reacher-1920x1080-02-alpha.png"
                 src="/reacher-images/character-profile/reacher-stats-426x1026-01-alpha.png"
                 alt="Reacher Image"
-                className="transform object-cover object-top md:ml-auto"
+                className="w-auto transform md:ml-auto"
                 width={426}
                 height={1026}
                 unoptimized
@@ -106,25 +111,25 @@ export default function MainPage() {
           <div className="section-child">
             <div className="z-10 flex w-full flex-col items-center justify-center">
               <div className="grid w-full max-w-7xl grid-rows-3 gap-6 px-4 py-6 md:grid-cols-2 md:grid-rows-2 md:px-8 lg:grid-cols-3 lg:grid-rows-1">
-                <Card className="border-0">
+                <Card className="gap-0 border-0">
                   <CardHeader>
                     <CardTitle className="font-bebas text-5xl tracking-wide text-zinc-200">
-                      REACHER BODY COUNT
+                      BODY COUNT
                     </CardTitle>
                     <CardDescription>
                       Confirmed kills and counting.
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="text-zinc-200">
-                    <div className="font-sometype text-center text-[9rem]">
-                      200
+                    <div className="font-sometype text-center text-[10rem]">
+                      {reacherStats.totalRK}
                     </div>
                   </CardContent>
                   {/* <CardFooter>
               <p>Card Footer</p>
             </CardFooter> */}
                 </Card>
-                <Card className="border-0">
+                <Card className="gap-0 border-0">
                   <CardHeader>
                     <CardTitle className="font-bebas text-5xl tracking-wide text-zinc-200">
                       METHODS
@@ -134,9 +139,7 @@ export default function MainPage() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="flex flex-row items-center justify-center text-zinc-200">
-                    <div className="-mt-[20px] flex h-48 w-48 items-center justify-center rounded-full border-[20px]">
-                      [donut graph]
-                    </div>
+                    <MethodsPieChart />
                   </CardContent>
                   {/* <CardFooter>
               <p>Card Footer</p>
@@ -151,23 +154,8 @@ export default function MainPage() {
                       Improvised or intentional, it’s always fatal.
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="flex flex-col space-y-3 text-zinc-200">
-                    <div className="flex flex-row items-center space-x-3">
-                      <div className="w-10">Gun</div>
-                      <div className="h-10 w-48 bg-zinc-200"></div>
-                    </div>
-                    <div className="flex flex-row items-center space-x-3">
-                      <div className="w-10">Knife</div>
-                      <div className="h-10 w-48 bg-zinc-200"></div>
-                    </div>
-                    <div className="flex flex-row items-center space-x-3">
-                      <div className="w-10">Hands</div>
-                      <div className="h-10 w-36 bg-zinc-200"></div>
-                    </div>
-                    <div className="flex flex-row items-center space-x-3">
-                      <div className="w-10">other</div>
-                      <div className="h-10 w-28 bg-zinc-200"></div>
-                    </div>
+                  <CardContent className="flex flex-col px-0 text-zinc-200">
+                    <WeaponsBarChartMixed />
                   </CardContent>
                   {/* <CardFooter>
               <p>Card Footer</p>
@@ -176,6 +164,10 @@ export default function MainPage() {
               </div>
             </div>
           </div>
+        </section>
+
+        <section className="flex-col-center w-full py-20 md:px-8">
+          <CareerStats />
         </section>
 
         {/* Season Section */}
@@ -206,13 +198,51 @@ export default function MainPage() {
 
         {/* Boss Section */}
 
-        <section className="w-full">
+        {/* <section className="w-full">
           <div className="section-child bg-indigo-500/50">Boss Details</div>
-        </section>
+        </section> */}
       </div>
 
-      <footer className="w-full">
-        <div className="section-child bg-red-500/50">Footer</div>
+      <footer className="bg-accent mt-20 w-full">
+        <div className="bg-red-500">
+          <div className="section-child px-4 lg:px-6">
+            <div className="flex flex-row items-center justify-around space-x-2 py-8 text-sm font-semibold text-zinc-900 lg:py-10">
+              <div className="flex flex-row items-center space-x-6">
+                <div className="min-w-1/4 -skew-x-12 bg-zinc-900 px-3 py-1 text-zinc-200 md:min-w-auto">
+                  <div className="skew-x-12 italic"> Fan project.</div>
+                </div>
+                <div className="text-sm md:text-base">
+                  No affiliation with Reacher or its rights holders. All
+                  trademarks and copyrights belong to their respective owners.
+                </div>
+              </div>
+
+              {/* <div className="bg-blue-500">
+                <TbBrandGithubFilled className="hidden lg:block" size={28} />
+              </div> */}
+            </div>
+          </div>
+        </div>
+        <div className="bg-accent flex max-w-7xl flex-row items-center justify-end">
+          <a
+            className="underline-none group relative z-30 size-full"
+            href="https://www.thomastrudzinski.com/"
+          >
+            <div className="relative z-20 p-4 text-right text-zinc-900 transition-colors duration-300 ease-in-out">
+              thomastrudzinski.com
+            </div>
+            <div className="bg-accent absolute inset-0 z-10 w-0 -skew-x-12 transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-zinc-300"></div>
+          </a>
+
+          <div className="group -skew-x-12 bg-black p-4 transition-colors duration-300 ease-in-out hover:bg-zinc-300">
+            <a className="skew-x-12" href="https://github.com/2nspired">
+              <TbBrandGithubFilled
+                size={24}
+                className="skew-x-12 transition-colors duration-300 ease-in-out group-hover:text-zinc-900"
+              />
+            </a>
+          </div>
+        </div>
       </footer>
     </main>
   );

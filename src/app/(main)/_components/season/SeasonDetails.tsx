@@ -1,4 +1,4 @@
-import LargeVideoCard from "./VideoCard";
+import LargeVideoCard from "~/app/(main)/_components/VideoCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import Skull from "~/app/(main)/_components/svg/SkullCross";
 import {

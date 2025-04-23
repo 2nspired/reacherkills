@@ -1,4 +1,4 @@
-import VideoBackground from "./VideoBackground";
+import VideoBackground from "~/app/(main)/_components/VideoBackground";
 import episodesData from "~/data/episodes-flat-data.json";
 import deathsData from "~/data/deaths-flat-data.json";
 
