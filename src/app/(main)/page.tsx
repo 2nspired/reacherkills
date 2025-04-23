@@ -4,6 +4,7 @@ import Profile from "~/app/(main)/_components/Profile";
 import SeasonDetailsOverlay from "~/app/(main)/_components/season/SeasonDetailsOverlay";
 import CareerStats from "~/app/(main)/_components/CareerStats";
 import VidCard from "~/app/(main)/_components/VidCard";
+import { TbBrandGithubFilled } from "react-icons/tb";
 
 import {
   Card,
@@ -203,15 +204,43 @@ export default function MainPage() {
       </div>
 
       <footer className="bg-accent mt-20 w-full">
-        <div className="section-child">
-          <div className="flex-row-center space-x-2 py-10 text-sm font-semibold text-zinc-900">
-            <div className="-skew-x-12 bg-zinc-900 px-3 py-1 text-zinc-200">
-              <div className="skew-x-12 italic"> Fan project.</div>
+        <div className="bg-red-500">
+          <div className="section-child px-4 lg:px-6">
+            <div className="flex flex-row items-center justify-around space-x-2 py-8 text-sm font-semibold text-zinc-900 lg:py-10">
+              <div className="flex flex-row items-center space-x-6">
+                <div className="min-w-1/4 -skew-x-12 bg-zinc-900 px-3 py-1 text-zinc-200 md:min-w-auto">
+                  <div className="skew-x-12 italic"> Fan project.</div>
+                </div>
+                <div className="text-sm md:text-base">
+                  No affiliation with Reacher or its rights holders. All
+                  trademarks and copyrights belong to their respective owners.
+                </div>
+              </div>
+
+              {/* <div className="bg-blue-500">
+                <TbBrandGithubFilled className="hidden lg:block" size={28} />
+              </div> */}
             </div>
-            <div>
-              No affiliation with Reacher or its rights holders. All trademarks
-              and copyrights belong to their respective owners.
+          </div>
+        </div>
+        <div className="bg-accent flex max-w-7xl flex-row items-center justify-end">
+          <a
+            className="underline-none group relative z-30 size-full"
+            href="https://www.thomastrudzinski.com/"
+          >
+            <div className="relative z-20 p-4 text-right text-zinc-900 transition-colors duration-300 ease-in-out">
+              thomastrudzinski.com
             </div>
+            <div className="bg-accent absolute inset-0 z-10 w-0 -skew-x-12 transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-zinc-300"></div>
+          </a>
+
+          <div className="group -skew-x-12 bg-black p-4 transition-colors duration-300 ease-in-out hover:bg-zinc-300">
+            <a className="skew-x-12" href="https://github.com/2nspired">
+              <TbBrandGithubFilled
+                size={24}
+                className="skew-x-12 transition-colors duration-300 ease-in-out group-hover:text-zinc-900"
+              />
+            </a>
           </div>
         </div>
       </footer>
