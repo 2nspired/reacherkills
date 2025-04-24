@@ -1,9 +1,20 @@
 import Image from "next/image";
-import { getReacherStats } from "~/utilities/data-helpers";
+import { getReacherStats } from "~/utilities/reacher-data-helper";
 import { RKLineChart } from "~/app/(main)/_components/stats/RKLineChart";
+import { MethodsRadarChart } from "./stats/MethodsRadarChart";
+import deathData from "~/data/deaths-flat-data.json";
+
+import { getTotalXP, getXPStats } from "~/utilities/xp-helper";
 
 const CareerStats = () => {
   const reacherStats = getReacherStats();
+  const xpDisplay = getTotalXP({ deathData, name: "Jack Reacher" });
+  const xpStats = getXPStats({
+    deathData,
+    name: "Jack Reacher",
+  });
+
+  // console.log("xpStats", xpStats);
 
   return (
     <div className="flex w-full max-w-7xl flex-col">
@@ -18,18 +29,18 @@ const CareerStats = () => {
           alt="major rank"
         />
         <div className="flex-col-center font-bebas grow rounded-sm bg-[url('/reacher-images/hero/reacher-1920x1080-02.png')] bg-cover bg-top p-4 text-center text-2xl text-white">
-          stuff in here
+          3-4 images: Total XP
         </div>
       </div>
 
       {/* Kills Section */}
 
       <div className="flex w-full flex-col pt-10 lg:flex-row">
-        <div className="flex flex-col bg-zinc-800 md:rounded-t-sm lg:rounded-tr-none">
+        <div className="flex flex-col bg-zinc-900 md:rounded-t-sm lg:rounded-tr-none">
           <div className="font-bebas p-4 text-3xl tracking-wide md:text-4xl lg:p-6">
             Career
           </div>
-          <div className="flex h-full flex-row flex-wrap justify-between bg-zinc-700">
+          <div className="flex h-full flex-row flex-wrap justify-between bg-zinc-800">
             <SmallStat
               className="w-1/2"
               title="Total Kills"
@@ -62,22 +73,22 @@ const CareerStats = () => {
         {/* Loadout Section */}
         <div className="w-full">
           <div className="flex h-full flex-col">
-            <div className="font-bebas bg-zinc-900 p-4 text-3xl tracking-wide md:text-4xl lg:rounded-tr-sm lg:p-6">
+            <div className="font-bebas bg-zinc-800 p-4 text-3xl tracking-wide md:text-4xl lg:rounded-tr-sm lg:p-6">
               Loadout
             </div>
-            <div className="flex h-full flex-col flex-wrap justify-between lg:flex-row">
+            <div className="flex h-full flex-col flex-wrap justify-between bg-zinc-700 lg:flex-row">
               <WeaponCard
-                className="bg-zinc-800 py-3 lg:w-1/3 lg:p-6"
+                className="py-3 lg:w-1/3 lg:p-6"
                 weapon="toothbrush"
                 kills={0}
               />
               <WeaponCard
-                className="bg-zinc-700 py-3 lg:w-1/3 lg:p-6"
+                className="py-3 lg:w-1/3 lg:p-6"
                 weapon={`${reacherStats.weapons[0]?.weapon}`}
                 kills={reacherStats.weapons[0]?.count ?? 0}
               />
               <WeaponCard
-                className="bg-zinc-600 py-3 lg:w-1/3 lg:p-6"
+                className="py-3 lg:w-1/3 lg:p-6"
                 weapon={`${reacherStats.weapons[1]?.weapon}`}
                 kills={reacherStats.weapons[1]?.count ?? 0}
               />
@@ -86,11 +97,36 @@ const CareerStats = () => {
         </div>
       </div>
 
-      <div className="bg-zinc-900">
-        <div className="font-bebas bg-zinc-800 p-4 text-2xl tracking-wide md:text-4xl lg:p-6">
+      <div className="bg-zinc-800">
+        <div className="font-bebas bg-zinc-900 p-4 text-2xl tracking-wide md:text-4xl lg:p-6">
           Kills Over Episodes
         </div>
         <RKLineChart />
+      </div>
+      <div className="flex flex-row flex-wrap">
+        <div className="w-full bg-zinc-800 lg:w-1/2">
+          <div className="font-bebas bg-zinc-900 p-4 text-2xl tracking-wide md:text-4xl lg:p-6">
+            Methods
+          </div>
+          <MethodsRadarChart select="methods" />
+        </div>
+        <div className="w-full bg-zinc-700 lg:w-1/2">
+          <div className="font-bebas bg-zinc-800 p-4 text-2xl tracking-wide md:text-4xl lg:p-6">
+            Death Blows
+          </div>
+          <MethodsRadarChart select="methodLocations" />
+        </div>
+      </div>
+      <div className="flex flex-col">
+        <div className="font-bebas bg-zinc-900 p-4 text-2xl tracking-wide md:text-4xl lg:p-6">
+          XP Breakdown
+        </div>
+
+        <SmallStat title="Total XP" value={xpStats.totalXP} />
+        <SmallStat title="Core" value={xpStats.coreXP} />
+        <SmallStat title="Environment" value={xpStats.envXP} />
+        <SmallStat title="Combo Bonus" value={xpStats.comboXP} />
+        <SmallStat title="Style" value={xpStats.styleXP} />
       </div>
     </div>
   );
