@@ -214,7 +214,7 @@ const SmallStat = ({
   className?: string;
 }) => {
   return (
-    <div className={`${className} p-4 lg:p-6`}>
+    <div className={`${className} text-accent p-4 lg:p-6`}>
       <div className="inline-block">
         <div className="font-bebas text-xl tracking-wide text-zinc-400 md:text-2xl">
           {title}
@@ -259,7 +259,7 @@ const WeaponCard = ({
         <div className="font-bebas flex h-full grow flex-col items-end justify-end text-2xl tracking-wide lg:justify-end">
           <div>
             <div className="text-zinc-400">Total Kills</div>
-            <div className="font-sometype text-3xl font-semibold md:text-4xl">
+            <div className="font-sometype text-accent text-3xl font-semibold md:text-4xl">
               {kills}
             </div>
           </div>
@@ -295,7 +295,7 @@ const XPBreakdown = ({
           )}
         </div>
       </div>
-      <div className="font-sometype w-1/3 text-right text-2xl font-semibold tracking-tight text-zinc-300 md:text-2xl">
+      <div className="font-sometype w-1/3 text-right text-2xl font-semibold tracking-tight text-orange-300/70 md:text-2xl">
         {`+ ${value} XP`}
       </div>
     </div>
