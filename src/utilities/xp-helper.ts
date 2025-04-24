@@ -42,15 +42,14 @@ export const getTotalXP = ({
 
   const coreXP = kills.reduce((acc: number, kill) => {
     const xp =
-      xpConfig["coreMethods"].find((entry) => entry.method === kill.method)
-        ?.xp ?? 0;
+      xpConfig.coreMethods.find((entry) => entry.method === kill.method)?.xp ??
+      0;
     return acc + Number(xp);
   }, 0);
 
   const envXP = kills.reduce((acc: number, kill) => {
     kill.envMods.forEach((mod) => {
-      const xp =
-        xpConfig["envMods"].find((entry) => entry.tag === mod)?.xp ?? 0;
+      const xp = xpConfig.envMods.find((entry) => entry.tag === mod)?.xp ?? 0;
       acc += Number(xp);
     });
     return acc;
@@ -75,8 +74,8 @@ export const getTotalXP = ({
 
   const styleXP = kills.reduce((acc: number, kill) => {
     const xp =
-      xpConfig["executionStyles"].find((entry) => entry.tag === kill.style)
-        ?.xp ?? 0;
+      xpConfig.executionStyles.find((entry) => entry.tag === kill.style)?.xp ??
+      0;
     return acc + Number(xp);
   }, 0);
 
@@ -93,13 +92,7 @@ export const getTotalXP = ({
 // XP STATS - Full breakdown
 // --------------------------------------------------
 
-export const getXPStats = ({
-  deathData,
-  name = "Jack Reacher",
-}: {
-  deathData: DeathEntry[];
-  name?: string;
-}) => {
+export const getXPStats = ({ name = "Jack Reacher" }: { name?: string }) => {
   const kills = deaths.filter(
     (death) => death.isKilled && death.killer === name,
   );
@@ -117,14 +110,14 @@ export const getXPStats = ({
     count,
   }));
 
-  const coreXP = kills.reduce((acc: number, method) => {
+  const coreXP = kills.reduce((acc: number, kill) => {
     coreTags.push(
-      xpConfig.coreMethods.find((entry) => entry.method === method.method)
+      xpConfig.coreMethods.find((entry) => entry.method === kill.method)
         ?.method ?? "",
     );
     const xp =
-      xpConfig.coreMethods.find((entry) => entry.method === method.method)
-        ?.xp ?? 0;
+      xpConfig.coreMethods.find((entry) => entry.method === kill.method)?.xp ??
+      0;
 
     return acc + Number(xp);
   }, 0);
@@ -214,9 +207,9 @@ export const getXPStats = ({
       };
     });
 
-  console.log("comboXP", comboXP);
+  //   console.log("comboXP", comboXP);
   //   console.log("comboTags", comboTags);
-  console.log("comboMods", comboBonuses);
+  //   console.log("comboMods", comboBonuses);
 
   const styleTags: string[] = [];
   const styleXP = kills.reduce((acc: number, kill) => {

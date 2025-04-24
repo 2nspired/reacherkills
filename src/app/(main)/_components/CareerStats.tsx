@@ -9,7 +9,6 @@ import { getXPStats } from "~/utilities/xp-helper";
 const CareerStats = () => {
   const reacherStats = getReacherStats();
   const xpStats = getXPStats({
-    deathData,
     name: "Jack Reacher",
   });
 
