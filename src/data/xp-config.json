@@ -1,0 +1,38 @@
+{
+  "coreMethods": [
+    { "method": "shot", "xp": 50 },
+    { "method": "headshot", "xp": 100 },
+    { "method": "stabbed", "xp": 75 },
+    { "method": "cut", "xp": 75 },
+    { "method": "strangled", "xp": 90 },
+    { "method": "snapped", "xp": 110 },
+    { "method": "blunt force", "xp": 70 },
+    { "method": "exploded", "xp": 120 },
+    { "method": "burned", "xp": 130 },
+    { "method": "crushed", "xp": 130 },
+    { "method": "silent", "xp": 30 }
+  ],
+  "envMods": [
+    { "tag": "night", "xp": 20 },
+    { "tag": "distance", "xp": 20 },
+    { "tag": "injured", "xp": 50 },
+    { "tag": "restrained", "xp": 75 },
+    { "tag": "shirtless", "xp": 30 },
+    { "tag": "interrogation", "xp": 40 },
+    { "tag": "mid-convo", "xp": 60 },
+    { "tag": "toothbrush", "xp": 200 }
+  ],
+  "comboBonuses": [
+    { "tag": "double kill", "streak": 2, "xp": 40 },
+    { "tag": "triple kill", "streak": 3, "xp": 100 },
+    { "tag": "killstreak 5+", "streak": 5, "xp": 200 },
+    { "tag": "unstoppable 8+", "streak": 8, "xp": 500 }
+  ],
+  "executionStyles": [
+    { "tag": "one-shot", "xp": 100 },
+    { "tag": "taunt", "xp": 25 },
+    { "tag": "no-look", "xp": 50 },
+    { "tag": "walkaway", "xp": 75 },
+    { "tag": "no-blink", "xp": 100 }
+  ]
+}

@@ -8,7 +8,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "~/components/ui/chart";
-import { getReacherWeapons } from "~/utilities/data-helpers";
+import { getReacherWeapons } from "~/utilities/reacher-data-helper";
 const weaponsConfig = {
   gun: {
     label: "Gun",

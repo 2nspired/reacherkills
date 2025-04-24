@@ -9,7 +9,7 @@ import {
   ChartTooltipContent,
 } from "~/components/ui/chart";
 
-import { getReacherKills } from "~/utilities/data-helpers";
+import { getReacherKills } from "~/utilities/reacher-data-helper";
 
 const rkData = getReacherKills();
 

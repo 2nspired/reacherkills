@@ -15,7 +15,7 @@ import {
   CardTitle,
 } from "~/components/ui/card";
 import Image from "next/image";
-import { getReacherStats } from "~/utilities/data-helpers";
+import { getReacherStats } from "~/utilities/reacher-data-helper";
 import MethodsPieChart from "./_components/stats/MethodsPieChart";
 import { WeaponsBarChartMixed } from "./_components/stats/WeaponsBarChartMixed";
 
@@ -223,24 +223,26 @@ export default function MainPage() {
             </div>
           </div>
         </div>
-        <div className="bg-accent flex max-w-7xl flex-row items-center justify-end">
-          <a
-            className="underline-none group relative z-30 size-full"
-            href="https://www.thomastrudzinski.com/"
-          >
-            <div className="relative z-20 p-4 text-right text-zinc-900 transition-colors duration-300 ease-in-out">
-              thomastrudzinski.com
-            </div>
-            <div className="bg-accent absolute inset-0 z-10 w-0 -skew-x-12 transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-zinc-300"></div>
-          </a>
-
-          <div className="group -skew-x-12 bg-black p-4 transition-colors duration-300 ease-in-out hover:bg-zinc-300">
-            <a className="skew-x-12" href="https://github.com/2nspired">
-              <TbBrandGithubFilled
-                size={24}
-                className="skew-x-12 transition-colors duration-300 ease-in-out group-hover:text-zinc-900"
-              />
+        <div className="flex-col-center w-full">
+          <div className="flex w-full max-w-7xl flex-row items-center justify-end">
+            <a
+              className="underline-none group relative z-30 size-full"
+              href="https://www.thomastrudzinski.com/"
+            >
+              <div className="relative z-20 p-4 text-right text-zinc-900 transition-colors duration-300 ease-in-out">
+                thomastrudzinski.com
+              </div>
+              <div className="bg-accent absolute inset-0 z-10 w-0 -skew-x-12 transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-zinc-300"></div>
             </a>
+
+            <div className="group -skew-x-12 bg-black p-4 transition-colors duration-300 ease-in-out hover:bg-zinc-300">
+              <a className="skew-x-12" href="https://github.com/2nspired">
+                <TbBrandGithubFilled
+                  size={24}
+                  className="skew-x-12 transition-colors duration-300 ease-in-out group-hover:text-zinc-900"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </footer>

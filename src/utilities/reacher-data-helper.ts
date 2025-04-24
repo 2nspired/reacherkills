@@ -274,7 +274,7 @@ export const getReacherMethods = () => {
       }, {}),
   )
     .sort((a, b) => b[1] - a[1])
-    .map(([method, kill]) => ({ method, kill }));
+    .map(([method, kills]) => ({ method, kills }));
 
   const methodLocations = Object.entries(
     deathsData
@@ -311,7 +311,7 @@ export const getReacherWeapons = () => {
 };
 
 // --------------------------------------------------------------
-// REACHER KILLS
+// REACHER KILLS BY EPISODE
 // --------------------------------------------------------------
 
 export const getReacherKills = () => {
