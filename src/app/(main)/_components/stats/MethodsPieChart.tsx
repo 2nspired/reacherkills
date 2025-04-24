@@ -8,7 +8,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "~/components/ui/chart";
-import { getReacherMethods } from "~/utilities/data-helpers";
+import { getReacherMethods } from "~/utilities/reacher-data-helper";
 
 const reacherMethods = getReacherMethods();
 const methods = reacherMethods.methods.map((method) => ({
