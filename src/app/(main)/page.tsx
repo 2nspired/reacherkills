@@ -77,8 +77,8 @@ export default function MainPage() {
         {/* Quote Section */}
 
         <section className="w-full">
-          <div className="section-child flex-col-center min-h-[40vw] p-6">
-            <div>
+          <div className="section-child flex-col-center py-20 lg:py-30">
+            <div className="p-6">
               <ReacherSays />
             </div>
           </div>
