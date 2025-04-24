@@ -4,11 +4,10 @@ import { RKLineChart } from "~/app/(main)/_components/stats/RKLineChart";
 import { MethodsRadarChart } from "./stats/MethodsRadarChart";
 import deathData from "~/data/deaths-flat-data.json";
 
-import { getTotalXP, getXPStats } from "~/utilities/xp-helper";
+import { getXPStats } from "~/utilities/xp-helper";
 
 const CareerStats = () => {
   const reacherStats = getReacherStats();
-  const xpDisplay = getTotalXP({ deathData, name: "Jack Reacher" });
   const xpStats = getXPStats({
     deathData,
     name: "Jack Reacher",
@@ -33,10 +32,89 @@ const CareerStats = () => {
         </div>
       </div>
 
+      {/* XP BREAKDOWN */}
+
+      <div className="mt-10 bg-zinc-800">
+        <div className="flex flex-col bg-zinc-800">
+          <div className="font-bebas bg-zinc-900 p-4 text-2xl tracking-wide md:text-4xl lg:p-6">
+            XP Breakdown
+          </div>
+
+          <SmallStat title="Total XP" value={`${xpStats.totalXP} XP`} />
+        </div>
+
+        <div className="flex w-full flex-row flex-wrap">
+          <div className="w-full pb-10 lg:w-1/2">
+            <SmallStat
+              // className="bg-zinc-700"
+              title="Methods"
+              value={`${xpStats.coreXP} XP`}
+            />
+            <div className="pb-6">
+              {xpStats.core.map((method, index) => (
+                <XPBreakdown
+                  key={index}
+                  title={method.method}
+                  count={method.count}
+                  value={method.totalXP}
+                  lowValue={method.singleXP}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="w-full pb-10 lg:flex lg:w-1/2 lg:flex-row lg:justify-end">
+            <div className="w-full">
+              <SmallStat title="Environment" value={`${xpStats.envXP} XP`} />
+              <div className="pb-6">
+                {xpStats.env.map((mod) => (
+                  <XPBreakdown
+                    key={mod.tag}
+                    title={mod.tag}
+                    count={mod.count}
+                    value={mod.totalXP}
+                    lowValue={mod.singleXP}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="w-full pb-10 lg:w-1/2">
+            <SmallStat title="Combo Bonus" value={`${xpStats.comboXP} XP`} />
+            <div className="pb-6">
+              {xpStats.combo.map((combo) => (
+                <XPBreakdown
+                  key={combo.tag}
+                  title={combo.tag}
+                  count={combo.count}
+                  value={combo.totalXP}
+                  lowValue={combo.singleXP}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="w-full pb-10 lg:w-1/2">
+            <SmallStat title="Style" value={`${xpStats.styleXP} XP`} />
+            <div className="pb-6">
+              {xpStats.style.map((style) => (
+                <XPBreakdown
+                  key={style.tag}
+                  title={style.tag}
+                  count={style.count}
+                  value={style.totalXP}
+                  lowValue={style.singleXP}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Kills Section */}
 
-      <div className="flex w-full flex-col pt-10 lg:flex-row">
-        <div className="flex flex-col bg-zinc-900 md:rounded-t-sm lg:rounded-tr-none">
+      <div className="flex w-full flex-col lg:flex-row">
+        <div className="flex w-full flex-col bg-zinc-900 md:rounded-t-sm lg:rounded-tr-none">
           <div className="font-bebas p-4 text-3xl tracking-wide md:text-4xl lg:p-6">
             Career
           </div>
@@ -73,7 +151,7 @@ const CareerStats = () => {
         {/* Loadout Section */}
         <div className="w-full">
           <div className="flex h-full flex-col">
-            <div className="font-bebas bg-zinc-800 p-4 text-3xl tracking-wide md:text-4xl lg:rounded-tr-sm lg:p-6">
+            <div className="font-bebas bg-zinc-900 p-4 text-3xl tracking-wide md:text-4xl lg:rounded-tr-sm lg:p-6">
               Loadout
             </div>
             <div className="flex h-full flex-col flex-wrap justify-between bg-zinc-700 lg:flex-row">
@@ -106,27 +184,16 @@ const CareerStats = () => {
       <div className="flex flex-row flex-wrap">
         <div className="w-full bg-zinc-800 lg:w-1/2">
           <div className="font-bebas bg-zinc-900 p-4 text-2xl tracking-wide md:text-4xl lg:p-6">
-            Methods
+            Top Methods
           </div>
           <MethodsRadarChart select="methods" />
         </div>
         <div className="w-full bg-zinc-700 lg:w-1/2">
-          <div className="font-bebas bg-zinc-800 p-4 text-2xl tracking-wide md:text-4xl lg:p-6">
+          <div className="font-bebas bg-zinc-900 p-4 text-2xl tracking-wide md:text-4xl lg:p-6">
             Death Blows
           </div>
           <MethodsRadarChart select="methodLocations" />
         </div>
-      </div>
-      <div className="flex flex-col">
-        <div className="font-bebas bg-zinc-900 p-4 text-2xl tracking-wide md:text-4xl lg:p-6">
-          XP Breakdown
-        </div>
-
-        <SmallStat title="Total XP" value={xpStats.totalXP} />
-        <SmallStat title="Core" value={xpStats.coreXP} />
-        <SmallStat title="Environment" value={xpStats.envXP} />
-        <SmallStat title="Combo Bonus" value={xpStats.comboXP} />
-        <SmallStat title="Style" value={xpStats.styleXP} />
       </div>
     </div>
   );
@@ -198,6 +265,39 @@ const WeaponCard = ({
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  );
+};
+
+// ---------------------------------------------------
+
+const XPBreakdown = ({
+  title,
+  count,
+  value,
+  lowValue,
+}: {
+  title: string;
+  count: number;
+  value: number;
+  lowValue?: number;
+}) => {
+  return (
+    <div className="flex flex-row items-center justify-between px-4 lg:px-6">
+      <div className="font-bebas w-1/3 text-xl tracking-wide text-zinc-400 md:text-2xl">
+        {title}
+      </div>
+      <div className="font-bebas w-1/3 text-xl tracking-wide text-zinc-300 md:text-2xl">
+        <div className="flex flex-row space-x-1">
+          <div className="w-8">{count}</div>
+          {lowValue && (
+            <div className="pt-2 text-base leading-3 text-zinc-500 md:text-lg">{`(${lowValue} XP)`}</div>
+          )}
+        </div>
+      </div>
+      <div className="font-sometype w-1/3 text-right text-2xl font-semibold tracking-tight text-zinc-300 md:text-2xl">
+        {`+ ${value} XP`}
       </div>
     </div>
   );

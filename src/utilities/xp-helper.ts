@@ -66,12 +66,11 @@ export const getTotalXP = ({
   );
 
   const comboXP = Object.values(killsPerEpisode).reduce((total, count) => {
-    const entry = xpConfig["comboBonuses"]
-      .slice()
-      .sort((a, b) => b.streak - a.streak)
-      .find((c) => count >= c.streak);
+    const applicableBonuses = xpConfig.comboBonuses
+      .filter((c) => count >= c.streak)
+      .map((c) => c.xp);
 
-    return total + (entry?.xp ?? 0);
+    return total + applicableBonuses.reduce((sum, xp) => sum + xp, 0);
   }, 0);
 
   const styleXP = kills.reduce((acc: number, kill) => {
@@ -190,11 +189,11 @@ export const getXPStats = ({
   );
 
   const comboXP = Object.values(killsPerEpisode).reduce((total, count) => {
-    const entry = xpConfig.comboBonuses
-      .slice()
-      .sort((a, b) => b.streak - a.streak)
-      .find((c) => count >= c.streak);
-    return total + (entry?.xp ?? 0);
+    const applicableBonuses = xpConfig.comboBonuses
+      .filter((c) => count >= c.streak)
+      .map((c) => c.xp);
+
+    return total + applicableBonuses.reduce((sum, xp) => sum + xp, 0);
   }, 0);
 
   const comboBonuses = xpConfig.comboBonuses
@@ -215,9 +214,9 @@ export const getXPStats = ({
       };
     });
 
-  //   console.log("comboXP", comboXP);
+  console.log("comboXP", comboXP);
   //   console.log("comboTags", comboTags);
-  //   console.log("comboMods", comboBonuses);
+  console.log("comboMods", comboBonuses);
 
   const styleTags: string[] = [];
   const styleXP = kills.reduce((acc: number, kill) => {

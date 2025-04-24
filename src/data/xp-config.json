@@ -26,7 +26,7 @@
     { "tag": "double kill", "streak": 2, "xp": 40 },
     { "tag": "triple kill", "streak": 3, "xp": 100 },
     { "tag": "killstreak 5+", "streak": 5, "xp": 200 },
-    { "tag": "unstoppable", "streak": 8, "xp": 500 }
+    { "tag": "unstoppable 8+", "streak": 8, "xp": 500 }
   ],
   "executionStyles": [
     { "tag": "one-shot", "xp": 100 },

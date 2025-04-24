@@ -13,7 +13,7 @@ import { getReacherMethods } from "~/utilities/reacher-data-helper";
 const reacherMethods = getReacherMethods();
 const methods = reacherMethods.methods.map((method) => ({
   name: method.method,
-  value: method.kill,
+  value: method.kills,
 }));
 
 const methodsColors = [
