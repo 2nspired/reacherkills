@@ -17,6 +17,7 @@ import Image from "next/image";
 import { getReacherStats } from "~/utilities/reacher-data-helper";
 import MethodsPieChart from "./_components/stats/MethodsPieChart";
 import { WeaponsBarChartMixed } from "./_components/stats/WeaponsBarChartMixed";
+import Footer from "~/app/(main)/_components/Footer";
 
 export default function MainPage() {
   const reacherStats = getReacherStats();
@@ -27,11 +28,20 @@ export default function MainPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="w-full overflow-hidden px-4 md:px-8">
+      <section className="w-full overflow-hidden">
         <div className="section-child relative h-[90vh] max-h-[64rem] min-h-[36rem] md:min-h-[60rem] lg:min-h-[50rem] xl:min-h-[910px]">
-          <div className="absolute inset-0 z-0 mt-18 scale-x-[-1] transform bg-[url('/reacher-images/hero/reacher-2560x1440-06-alpha.png')] mask-b-from-20% mask-b-to-80% bg-cover bg-top sm:mt-0 lg:mt-0 2xl:scale-x-[-1]" />
+          <div className="absolute inset-0 z-0 mt-18 scale-x-[-1] transform mask-b-from-20% mask-b-to-80% bg-cover bg-top sm:mt-0 lg:mt-0 2xl:scale-x-[-1]">
+            {" "}
+            <Image
+              src="/reacher-images/hero/reacher-2560x1440-06-alpha.png"
+              alt="Hero Background"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
           <div className="relative flex size-full flex-col justify-around">
-            <div>
+            <div className="px-4 md:px-6">
               <div className="font-bebas text-8xl leading-none font-bold tracking-wide md:text-[9rem] lg:text-[12rem]">
                 Reacher
               </div>
@@ -44,7 +54,7 @@ export default function MainPage() {
               </div>
             </div>
             <div className="flex flex-col justify-end space-y-6">
-              <div>
+              <div className="px-4 md:px-6">
                 <div className="font-bebas text-2xl tracking-wide sm:text-4xl md:text-4xl lg:text-5xl">
                   SITREP
                 </div>
@@ -57,14 +67,14 @@ export default function MainPage() {
                   but.
                 </div>
               </div>
-              <a
+              {/* <a
                 className="border-accent font-sometype max-w-44 rounded-lg border-2 bg-black/50 px-4 py-2 text-base font-semibold transition-all duration-300 ease-in-out hover:border-transparent hover:bg-zinc-200/50 hover:bg-none hover:text-zinc-50"
                 href="https://www.amazon.com/gp/video/detail/B09ML1GHXS/ref=atv_sr_fle_c_sr6eee57_1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B09ML111MB&qid=1742970427979"
                 target="_blank"
                 rel="noreferrer"
               >
                 Stream Season 3
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
@@ -188,14 +198,34 @@ export default function MainPage() {
           </SeasonDetailsOverlay> */}
         </section>
       </div>
+      <Footer />
+      {/* <footer className="flex-col-center bg-blue-500">
+        <div className="flex w-full max-w-7xl flex-row justify-center bg-red-500 px-4 py-6 lg:px-6">
+          <div className="m-auto -skew-x-12 bg-zinc-900 px-4 py-2">
+            <div className="min-w-[95px] skew-x-12 text-center text-sm font-semibold lg:p-6">
+              fan project.
+            </div>
+          </div>
+          <div className="p-4 text-sm font-semibold text-zinc-900 lg:p-6">
+            No affiliation with Reacher or its rights holders. All trademarks
+            and copyrights belong to their respective owners.
+          </div>
+        </div>
+        <div className="flex w-full flex-row justify-center bg-green-500">
+          <div className="flex w-full max-w-7xl flex-row items-center justify-start">
+            <div className="w-4/5 bg-purple-500">portfolio link</div>
+            <div className="w-1/5 bg-indigo-500">gihub link</div>
+          </div>
+        </div>
+      </footer> */}
 
-      <footer className="bg-accent mt-20 w-full">
+      {/* <footer className="bg-accent mt-20 w-full">
         <div className="bg-red-500">
           <div className="section-child px-4 lg:px-6">
             <div className="flex flex-row items-center justify-around space-x-2 py-8 text-sm font-semibold text-zinc-900 lg:py-10">
               <div className="flex flex-row items-center space-x-6">
                 <div className="min-w-1/4 -skew-x-12 bg-zinc-900 px-3 py-1 text-zinc-200 md:min-w-auto">
-                  <div className="skew-x-12 italic"> Fan project.</div>
+                  <div className="skew-x-12 italic">fan project</div>
                 </div>
                 <div className="text-sm md:text-base">
                   No affiliation with Reacher or its rights holders. All
@@ -227,7 +257,7 @@ export default function MainPage() {
             </div>
           </div>
         </div>
-      </footer>
+      </footer> */}
 
       {/* EXPERIMENT WITH OVERLAYS */}
       {/* <div className="absolute inset-0 z-50 opacity-50 contrast-50 saturate-200 backdrop-blur-[2px] backdrop-hue-rotate-30"></div> */}
