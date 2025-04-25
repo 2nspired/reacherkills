@@ -5,9 +5,10 @@ import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.reacherkills.com"),
   title: {
     template: "%s - reacher kills",
-    default: "reacher kills - solving crime and street justice",
+    default: "reacher kills - solving crime and serving justice",
   },
   description:
     "A fan-made guide tracking every bad guy Jack Reacher takes down, episode by episode.",
@@ -21,7 +22,32 @@ export const metadata: Metadata = {
       { url: "/icons/icon-apple-180.png", sizes: "180x180", type: "image/png" },
     ],
   },
+  openGraph: {
+    title: "reacher kills",
+    description:
+      "A fan-made guide tracking every bad guy Jack Reacher takes down, episode by episode.",
+    url: "https://www.reacherkills.com",
+    siteName: "reacher kills",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.reacherkills.com/rk-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "reacher kills",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    "max-video-preview": -1,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+  },
 };
+
 export const viewport: Viewport = {
   viewportFit: "cover",
 };
