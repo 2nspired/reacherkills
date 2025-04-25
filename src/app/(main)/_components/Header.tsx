@@ -4,9 +4,9 @@ export default function Header() {
   return (
     <header className="min-h-[3vw] w-full p-4 md:px-8">
       <div className="section-child">
-        <div className="flex flex-row items-center justify-between">
+        <div className="flex flex-col justify-between md:flex-row md:items-center">
           <Logo className="flex w-32 items-center text-2xl" />
-          <div className="font-sometype hidden text-sm md:block lg:text-base">
+          <div className="font-sometype text-xs md:block md:text-sm lg:text-base">
             More Accurate Than the Police Reports.
           </div>
           {/* <a

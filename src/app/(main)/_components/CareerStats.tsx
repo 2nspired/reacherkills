@@ -24,6 +24,7 @@ const CareerStats = () => {
             height={100}
             width={100}
             alt="new kill animation"
+            unoptimized
           />
           <Image
             src="/icons/new-kill.gif"
@@ -31,6 +32,7 @@ const CareerStats = () => {
             height={175}
             width={150}
             alt="new kill animation"
+            unoptimized
           />
           <div className="lg:hidden">
             <div className="font-bebas text-accent text-2xl">
