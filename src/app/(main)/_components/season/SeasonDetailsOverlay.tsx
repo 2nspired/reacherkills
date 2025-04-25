@@ -148,10 +148,7 @@ export default function SeasonDetailsOverlay({
                     </SelectContent>
                   </Select>
                 </div>
-                <ExpandContainer
-                  title="Season Stats"
-                  titleClassName="py-2 font-semibold"
-                >
+                <ExpandContainer>
                   <div className="pt-1 pb-3">
                     <div>{`Total Deaths: ${seasonData.season?.totalDeaths}`}</div>
                     <div>{`Reacher Kills: ${seasonData.season?.reacherKills}`}</div>

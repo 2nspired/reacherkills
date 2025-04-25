@@ -2,7 +2,7 @@ import Image from "next/image";
 import { getReacherStats } from "~/utilities/reacher-data-helper";
 import { RKLineChart } from "~/app/(main)/_components/stats/RKLineChart";
 import { MethodsRadarChart } from "./stats/MethodsRadarChart";
-import deathData from "~/data/deaths-flat-data.json";
+import ExpandContainer from "./ExpandContainer";
 
 import { getXPStats } from "~/utilities/xp-helper";
 
@@ -12,30 +12,73 @@ const CareerStats = () => {
     name: "Jack Reacher",
   });
 
-  // console.log("xpStats", xpStats);
-
   return (
     <div className="flex w-full max-w-7xl flex-col">
       {/* Header */}
 
-      <div className="flex flex-row space-x-3 px-4 lg:px-6">
-        <Image
-          className="w-[75px] sm:w-[100px] md:w-[125px]"
-          src="/rank/o4-major.png"
-          width={50}
-          height={50}
-          alt="major rank"
-        />
-        <div className="flex-col-center font-bebas grow rounded-sm bg-[url('/reacher-images/hero/reacher-1920x1080-02.png')] bg-cover bg-top p-4 text-center text-2xl text-white">
-          3-4 images: Total XP
+      <div className="flex flex-col lg:flex-row lg:justify-between">
+        <div className="lg: flex flex-row items-center space-x-6 p-4 lg:flex-none lg:space-x-0">
+          <Image
+            src="/icons/new-kill.gif"
+            className="rounded-4xl border border-black lg:hidden"
+            height={100}
+            width={100}
+            alt="new kill animation"
+          />
+          <Image
+            src="/icons/new-kill.gif"
+            className="hidden rounded-4xl border border-black lg:inline-block"
+            height={175}
+            width={150}
+            alt="new kill animation"
+          />
+          <div className="lg:hidden">
+            <div className="font-bebas text-accent text-3xl">
+              Ex Military Police
+            </div>
+            <div className="text-2xl font-semibold">LEVEL 9</div>
+          </div>
+        </div>
+
+        {/* BANNER */}
+        <div className="relative w-full py-3">
+          <div className="h-26">
+            <video
+              src="/banner/rk_banner_02.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="inset-0 z-20 size-full rounded-sm object-cover lg:absolute"
+            />
+          </div>
+          <div className="absolute inset-0 top-0 z-20 flex flex-col justify-center bg-black/30 mask-r-from-5% p-4 backdrop-blur-xs lg:flex-row lg:justify-start lg:space-x-4 lg:p-6">
+            <Image
+              className="w-[75px] drop-shadow-lg drop-shadow-zinc-900 sm:w-[100px] md:w-[125px]"
+              src="/rank/o4-major.png"
+              width={75}
+              height={75}
+              alt="major rank"
+            />
+
+            <div className="relative hidden drop-shadow-lg drop-shadow-zinc-900 lg:inline-block">
+              <div className="font-bebas text-accent text-2xl tracking-wide lg:text-3xl">
+                Ex Military Police
+              </div>
+              <div className="font-bebas text-2xl tracking-wide lg:text-6xl">
+                LEVEL 9
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* XP BREAKDOWN */}
 
-      <div className="mt-10 bg-zinc-800">
-        <div className="flex flex-col bg-zinc-800">
-          <div className="font-bebas bg-zinc-900 p-4 text-2xl tracking-wide md:text-4xl lg:p-6">
+      <div className="mt-10 rounded-t-sm bg-zinc-800">
+        <div className="flex flex-col rounded-t-sm bg-zinc-800">
+          <div className="font-bebas rounded-t-sm bg-zinc-900 p-4 text-2xl tracking-wide md:text-4xl lg:p-6">
             XP Breakdown
           </div>
 
@@ -43,29 +86,26 @@ const CareerStats = () => {
         </div>
 
         <div className="flex w-full flex-row flex-wrap">
-          <div className="w-full pb-10 lg:w-1/2">
-            <SmallStat
-              // className="bg-zinc-700"
-              title="Methods"
-              value={`${xpStats.coreXP} XP`}
-            />
-            <div className="pb-6">
-              {xpStats.core.map((method, index) => (
+          <div className="w-full pb-4 lg:w-1/2">
+            <SmallStat title="Methods" value={`${xpStats.coreXP} XP`} />
+            <ExpandContainer startHeight="h-24" maxHeight="h-48">
+              {xpStats.core.map((method) => (
                 <XPBreakdown
-                  key={index}
+                  key={method.method}
                   title={method.method}
                   count={method.count}
                   value={method.totalXP}
                   lowValue={method.singleXP}
                 />
               ))}
-            </div>
+            </ExpandContainer>
           </div>
 
-          <div className="w-full pb-10 lg:flex lg:w-1/2 lg:flex-row lg:justify-end">
+          <div className="w-full pb-4 lg:flex lg:w-1/2 lg:flex-row lg:justify-end">
             <div className="w-full">
               <SmallStat title="Environment" value={`${xpStats.envXP} XP`} />
-              <div className="pb-6">
+
+              <ExpandContainer startHeight="h-24" maxHeight="h-48">
                 {xpStats.env.map((mod) => (
                   <XPBreakdown
                     key={mod.tag}
@@ -75,12 +115,12 @@ const CareerStats = () => {
                     lowValue={mod.singleXP}
                   />
                 ))}
-              </div>
+              </ExpandContainer>
             </div>
           </div>
-          <div className="w-full pb-10 lg:w-1/2">
+          <div className="w-full pb-4 lg:w-1/2">
             <SmallStat title="Combo Bonus" value={`${xpStats.comboXP} XP`} />
-            <div className="pb-6">
+            <ExpandContainer startHeight="h-24" maxHeight="h-48">
               {xpStats.combo.map((combo) => (
                 <XPBreakdown
                   key={combo.tag}
@@ -90,12 +130,12 @@ const CareerStats = () => {
                   lowValue={combo.singleXP}
                 />
               ))}
-            </div>
+            </ExpandContainer>
           </div>
 
-          <div className="w-full pb-10 lg:w-1/2">
+          <div className="w-full pb-4 lg:w-1/2">
             <SmallStat title="Style" value={`${xpStats.styleXP} XP`} />
-            <div className="pb-6">
+            <ExpandContainer startHeight="h-24" maxHeight="h-48">
               {xpStats.style.map((style) => (
                 <XPBreakdown
                   key={style.tag}
@@ -105,7 +145,7 @@ const CareerStats = () => {
                   lowValue={style.singleXP}
                 />
               ))}
-            </div>
+            </ExpandContainer>
           </div>
         </div>
       </div>
@@ -113,7 +153,7 @@ const CareerStats = () => {
       {/* Kills Section */}
 
       <div className="flex w-full flex-col lg:flex-row">
-        <div className="flex w-full flex-col bg-zinc-900 md:rounded-t-sm lg:rounded-tr-none">
+        <div className="bg-zinc-90 flex w-full flex-col">
           <div className="font-bebas p-4 text-3xl tracking-wide md:text-4xl lg:p-6">
             Career
           </div>
@@ -150,7 +190,7 @@ const CareerStats = () => {
         {/* Loadout Section */}
         <div className="w-full">
           <div className="flex h-full flex-col">
-            <div className="font-bebas bg-zinc-900 p-4 text-3xl tracking-wide md:text-4xl lg:rounded-tr-sm lg:p-6">
+            <div className="font-bebas bg-zinc-900 p-4 text-3xl tracking-wide md:text-4xl lg:p-6">
               Loadout
             </div>
             <div className="flex h-full flex-col flex-wrap justify-between bg-zinc-700 lg:flex-row">
@@ -180,14 +220,14 @@ const CareerStats = () => {
         </div>
         <RKLineChart />
       </div>
-      <div className="flex flex-row flex-wrap">
-        <div className="w-full bg-zinc-800 lg:w-1/2">
+      <div className="flex flex-row flex-wrap rounded-b-xs">
+        <div className="w-full bg-zinc-800 lg:w-1/2 lg:rounded-bl-sm">
           <div className="font-bebas bg-zinc-900 p-4 text-2xl tracking-wide md:text-4xl lg:p-6">
             Top Methods
           </div>
           <MethodsRadarChart select="methods" />
         </div>
-        <div className="w-full bg-zinc-700 lg:w-1/2">
+        <div className="w-full rounded-br-sm bg-zinc-700 lg:w-1/2">
           <div className="font-bebas bg-zinc-900 p-4 text-2xl tracking-wide md:text-4xl lg:p-6">
             Death Blows
           </div>

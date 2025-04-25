@@ -1,7 +1,7 @@
 import ReacherSays from "~/app/(main)/_components/ReacherSays";
 import Header from "~/app/(main)/_components/Header";
 import Profile from "~/app/(main)/_components/Profile";
-import SeasonDetailsOverlay from "~/app/(main)/_components/season/SeasonDetailsOverlay";
+// import SeasonDetailsOverlay from "~/app/(main)/_components/season/SeasonDetailsOverlay";
 import CareerStats from "~/app/(main)/_components/CareerStats";
 import VidCard from "~/app/(main)/_components/VidCard";
 import { TbBrandGithubFilled } from "react-icons/tb";
@@ -10,7 +10,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  // CardFooter,
   CardHeader,
   CardTitle,
 } from "~/components/ui/card";
@@ -23,7 +22,7 @@ export default function MainPage() {
   const reacherStats = getReacherStats();
 
   return (
-    <main className="flex min-h-screen min-w-screen flex-col text-zinc-100">
+    <main className="relative flex min-h-screen min-w-screen flex-col text-zinc-100">
       {/* Header */}
       <Header />
 
@@ -125,9 +124,6 @@ export default function MainPage() {
                       {reacherStats.totalRK}
                     </div>
                   </CardContent>
-                  {/* <CardFooter>
-              <p>Card Footer</p>
-            </CardFooter> */}
                 </Card>
                 <Card className="gap-0 border-0">
                   <CardHeader>
@@ -141,9 +137,6 @@ export default function MainPage() {
                   <CardContent className="flex flex-row items-center justify-center text-zinc-200">
                     <MethodsPieChart />
                   </CardContent>
-                  {/* <CardFooter>
-              <p>Card Footer</p>
-            </CardFooter> */}
                 </Card>
                 <Card className="border-0">
                   <CardHeader>
@@ -157,32 +150,31 @@ export default function MainPage() {
                   <CardContent className="flex flex-col px-0 text-zinc-200">
                     <WeaponsBarChartMixed />
                   </CardContent>
-                  {/* <CardFooter>
-              <p>Card Footer</p>
-            </CardFooter> */}
                 </Card>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="flex-col-center w-full py-20 md:px-8">
+        <section className="flex-col-center w-full py-32 md:px-8">
           <CareerStats />
         </section>
 
         {/* Season Section */}
 
-        <section className="w-full py-20">
-          {/* <VidCard
-            title="Season Stats"
-            subtitle="2022"
-            description="Framed in Georgia. Corruption. Reacher hits back."
-            className="aspect-square min-h-60 sm:min-h-96"
+        <section className="w-full lg:py-40">
+          <VidCard
+            // title="Season Stats"
+            // subtitle="2022"
+            // description="Framed in Georgia. Corruption. Reacher hits back."
+            className="aspect-square max-h-24 min-h-60 md:max-h-[30vw]"
             video="/videos/reacher-s1-e1-lightening-long3.mp4"
             image="/videos/reacher-s1-e1-lightening.jpg"
-          /> */}
-
-          <SeasonDetailsOverlay seasonNum={1} className="">
+          />
+          <div className="flex-col-center w-full p-6 py-10 tracking-wide">
+            {/* <div>a storm is coming</div> */}
+          </div>
+          {/* <SeasonDetailsOverlay seasonNum={1} className="">
             <div>
               <VidCard
                 title="Season Stats"
@@ -193,14 +185,8 @@ export default function MainPage() {
                 image="/videos/reacher-s1-e1-lightening.jpg"
               />
             </div>
-          </SeasonDetailsOverlay>
+          </SeasonDetailsOverlay> */}
         </section>
-
-        {/* Boss Section */}
-
-        {/* <section className="w-full">
-          <div className="section-child bg-indigo-500/50">Boss Details</div>
-        </section> */}
       </div>
 
       <footer className="bg-accent mt-20 w-full">
@@ -216,10 +202,6 @@ export default function MainPage() {
                   trademarks and copyrights belong to their respective owners.
                 </div>
               </div>
-
-              {/* <div className="bg-blue-500">
-                <TbBrandGithubFilled className="hidden lg:block" size={28} />
-              </div> */}
             </div>
           </div>
         </div>
@@ -246,6 +228,9 @@ export default function MainPage() {
           </div>
         </div>
       </footer>
+
+      {/* EXPERIMENT WITH OVERLAYS */}
+      {/* <div className="absolute inset-0 z-50 opacity-50 contrast-50 saturate-200 backdrop-blur-[2px] backdrop-hue-rotate-30"></div> */}
     </main>
   );
 }

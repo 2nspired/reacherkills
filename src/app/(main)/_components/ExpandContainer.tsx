@@ -1,17 +1,18 @@
 "use client";
 
+import { ScrollArea } from "~/components/ui/scroll-area";
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 export default function ExpandContainer({
-  title,
-  titleClassName,
+  startHeight = "h-28",
+  maxHeight = "h-60",
   className,
   children,
   defaultOpen = false,
 }: {
-  title?: string;
-  titleClassName?: string;
+  startHeight?: string;
+  maxHeight?: string;
   className?: string;
   children?: React.ReactNode;
   defaultOpen?: boolean;
@@ -19,23 +20,30 @@ export default function ExpandContainer({
   const [open, setOpen] = useState(defaultOpen);
 
   return (
-    <div onClick={() => setOpen(!open)} className="">
-      {title && (
-        <div className="flex flex-row items-center justify-between">
-          <div className={`${titleClassName}`}>{title}</div>
-          {open ? (
-            <div className="flex-col-center">
-              <ChevronDown size={16} />
-            </div>
-          ) : (
-            <ChevronUp size={16} className="flex-col-center" />
-          )}
-        </div>
-      )}
+    <div
+      onClick={() => setOpen(!open)}
+      className={`${className} ${startHeight} ${open && maxHeight} relative mb-3 overflow-hidden transition-all duration-300 ease-in-out`}
+    >
       <div
-        className={`h-full overflow-hidden transition-all duration-300 ease-in-out ${open ? "max-h-[500px] opacity-100" : "opactiy-0 max-h-0"} ${className}`}
-      >
-        {children}
+        className={`absolute inset-0 top-0 h-full backdrop-blur-xs transition-all duration-300 ease-in-out ${open ? "bg-none mask-t-from-0% mask-t-to-0% backdrop-blur-none" : "bg-zinc-900/40 mask-t-from-3% mask-t-to-20% mask-r-from-60% mask-l-from-60%"}`}
+      ></div>
+      {open ? <ScrollArea className="h-full">{children}</ScrollArea> : children}
+      <div className="flex-col-center absolute bottom-0 z-50 mt-10 w-full">
+        <ChevronDown
+          className={`${
+            !open
+              ? "inline-block opacity-100 drop-shadow-2xl filter"
+              : "hidden opacity-0"
+          } transition-opacity duration-300 ease-in-out`}
+        />
+
+        <ChevronUp
+          className={`${
+            open
+              ? "drops-shadow-black inline-block opacity-100 drop-shadow-2xl filter"
+              : "hidden opacity-0"
+          } transition-opacity duration-300 ease-in-out`}
+        />
       </div>
     </div>
   );
