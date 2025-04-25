@@ -154,7 +154,7 @@ const CareerStats = () => {
 
       <div className="flex w-full flex-col lg:flex-row">
         <div className="bg-zinc-90 flex w-full flex-col">
-          <div className="font-bebas p-4 text-3xl tracking-wide md:text-4xl lg:p-6">
+          <div className="font-bebas bg-zinc-900 p-4 text-3xl tracking-wide md:text-4xl lg:p-6">
             Career
           </div>
           <div className="flex h-full flex-row flex-wrap justify-between bg-zinc-800">
