@@ -20,14 +20,14 @@ const CareerStats = () => {
         <div className="lg: flex flex-row items-center space-x-6 p-4 lg:flex-none lg:space-x-0">
           <Image
             src="/icons/new-kill.gif"
-            className="rounded-4xl border border-black lg:hidden"
+            className="aspect-square rounded-4xl border border-black lg:hidden"
             height={100}
             width={100}
             alt="new kill animation"
           />
           <Image
             src="/icons/new-kill.gif"
-            className="hidden rounded-4xl border border-black lg:inline-block"
+            className="hidden aspect-square rounded-4xl border border-black lg:inline-block"
             height={175}
             width={150}
             alt="new kill animation"
@@ -55,9 +55,9 @@ const CareerStats = () => {
               className="inset-0 z-20 size-full rounded-sm object-cover lg:absolute"
             />
           </div>
-          <div className="absolute inset-0 top-0 z-20 flex flex-col justify-center bg-black/30 mask-r-from-5% p-4 lg:flex-row lg:justify-start lg:space-x-4 lg:bg-black/50 lg:mask-r-from-5% lg:p-6 lg:backdrop-blur-xs">
+          <div className="absolute inset-0 top-0 z-20 flex h-auto flex-col justify-center bg-black/30 mask-r-from-5% p-4 lg:flex-row lg:justify-start lg:space-x-4 lg:bg-black/50 lg:mask-r-from-5% lg:p-6 lg:backdrop-blur-xs">
             <Image
-              className="w-[75px] drop-shadow-lg drop-shadow-zinc-900 sm:w-[100px] md:w-[125px]"
+              className="aspect-square h-auto w-[75px] drop-shadow-lg drop-shadow-zinc-900 sm:w-[100px] md:w-[125px]"
               src="/rank/major-rank-01.png"
               width={75}
               height={75}
