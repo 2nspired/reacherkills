@@ -4,6 +4,7 @@ import type { Viewport } from "next/types";
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import { PostHogProvider } from "../components/PostHogProvider";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.reacherkills.com"),
@@ -74,6 +75,7 @@ export default function RootLayout({
         className={`${GeistSans.variable} ${bebas.variable} ${sometype.variable} min-h-screen bg-black font-sans antialiased`}
       >
         <PostHogProvider>{children}</PostHogProvider>
+        <Analytics />
       </body>
     </html>
   );
