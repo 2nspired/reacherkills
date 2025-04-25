@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.reacherkills.com/rk-og.jpg",
+        url: "https://www.reacherkills.com/icons/rk-og.jpg",
         width: 1200,
         height: 630,
         alt: "reacher kills",
