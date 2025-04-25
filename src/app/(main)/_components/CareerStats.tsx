@@ -33,10 +33,12 @@ const CareerStats = () => {
             alt="new kill animation"
           />
           <div className="lg:hidden">
-            <div className="font-bebas text-accent text-3xl">
+            <div className="font-bebas text-accent text-2xl">
               Ex Military Police
             </div>
-            <div className="text-2xl font-semibold">LEVEL 9</div>
+            <div className="font-bebas text-4xl tracking-wide lg:text-6xl">
+              LEVEL 9
+            </div>
           </div>
         </div>
 
@@ -53,7 +55,7 @@ const CareerStats = () => {
               className="inset-0 z-20 size-full rounded-sm object-cover lg:absolute"
             />
           </div>
-          <div className="absolute inset-0 top-0 z-20 flex flex-col justify-center bg-black/30 mask-r-from-5% p-4 backdrop-blur-xs lg:flex-row lg:justify-start lg:space-x-4 lg:p-6">
+          <div className="absolute inset-0 top-0 z-20 flex flex-col justify-center bg-black/30 mask-r-from-5% p-4 lg:flex-row lg:justify-start lg:space-x-4 lg:bg-black/50 lg:mask-r-from-5% lg:p-6 lg:backdrop-blur-xs">
             <Image
               className="w-[75px] drop-shadow-lg drop-shadow-zinc-900 sm:w-[100px] md:w-[125px]"
               src="/rank/major-rank-01.png"
