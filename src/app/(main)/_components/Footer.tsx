@@ -45,12 +45,3 @@ const FooterLinkHover = () => {
     </div>
   );
 };
-
-{
-  /* <div className="flex w-full flex-row justify-center bg-green-500">
-        <div className="flex w-full max-w-7xl flex-row items-center justify-end">
-          <div className="bg-purple-500">portfolio link</div>
-          <div className="bg-indigo-500">gihub link</div>
-        </div>
-      </div> */
-}
