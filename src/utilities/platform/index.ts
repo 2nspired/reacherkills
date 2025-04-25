@@ -11,7 +11,7 @@ const getHostname = () => {
     ? "localhost:3000"
     : env.NEXT_PUBLIC_NODE_ENV === "preview"
       ? env.NEXT_PUBLIC_VERCEL_URL
-      : "www.weatherflame.com";
+      : "www.reacherkills.com";
 };
 
 const getProtocol = () => {
