@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { getReacherStats } from "~/utilities/reacher-data-helper";
 import { RKLineChart } from "~/app/(main)/_components/stats/RKLineChart";
-import { MethodsRadarChart } from "./stats/MethodsRadarChart";
-import ExpandContainer from "./ExpandContainer";
+import { MethodsRadarChart } from "~/app/(main)/_components/stats/MethodsRadarChart";
+import ExpandContainer from "~/app/(main)/_components/ExpandContainer";
 
 import { getXPStats } from "~/utilities/xp-helper";
 
@@ -56,7 +56,7 @@ const CareerStats = () => {
           <div className="absolute inset-0 top-0 z-20 flex flex-col justify-center bg-black/30 mask-r-from-5% p-4 backdrop-blur-xs lg:flex-row lg:justify-start lg:space-x-4 lg:p-6">
             <Image
               className="w-[75px] drop-shadow-lg drop-shadow-zinc-900 sm:w-[100px] md:w-[125px]"
-              src="/rank/o4-major.png"
+              src="/rank/major-rank-01.png"
               width={75}
               height={75}
               alt="major rank"
