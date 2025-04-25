@@ -33,7 +33,7 @@ const FooterLinkHover = () => {
           <div className="bg-accent absolute inset-0 z-10 w-0 -skew-x-12 transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-zinc-300"></div>
         </a>
 
-        <div className="group -skew-x-12 bg-black p-4 transition-colors duration-300 ease-in-out hover:bg-zinc-300">
+        <div className="group mr-4 -skew-x-12 bg-black p-4 transition-colors duration-300 ease-in-out hover:bg-zinc-300">
           <a className="skew-x-12" href="https://github.com/2nspired">
             <TbBrandGithubFilled
               size={24}

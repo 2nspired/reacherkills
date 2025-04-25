@@ -195,7 +195,7 @@ const CareerStats = () => {
             <div className="font-bebas bg-zinc-900 p-4 text-3xl tracking-wide md:text-4xl lg:p-6">
               Loadout
             </div>
-            <div className="flex h-full flex-col flex-wrap justify-between bg-zinc-700 lg:flex-row">
+            <div className="flex h-full flex-col flex-wrap justify-between bg-zinc-800 lg:flex-row lg:bg-zinc-700">
               <WeaponCard
                 className="py-3 lg:w-1/3 lg:p-6"
                 weapon="toothbrush"
@@ -229,7 +229,7 @@ const CareerStats = () => {
           </div>
           <MethodsRadarChart select="methods" />
         </div>
-        <div className="w-full rounded-br-sm bg-zinc-700 lg:w-1/2">
+        <div className="w-full rounded-br-sm bg-zinc-800 lg:w-1/2 lg:bg-zinc-700">
           <div className="font-bebas bg-zinc-900 p-4 text-2xl tracking-wide md:text-4xl lg:p-6">
             Death Blows
           </div>

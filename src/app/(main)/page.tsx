@@ -67,14 +67,6 @@ export default function MainPage() {
                   but.
                 </div>
               </div>
-              {/* <a
-                className="border-accent font-sometype max-w-44 rounded-lg border-2 bg-black/50 px-4 py-2 text-base font-semibold transition-all duration-300 ease-in-out hover:border-transparent hover:bg-zinc-200/50 hover:bg-none hover:text-zinc-50"
-                href="https://www.amazon.com/gp/video/detail/B09ML1GHXS/ref=atv_sr_fle_c_sr6eee57_1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B09ML111MB&qid=1742970427979"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Stream Season 3
-              </a> */}
             </div>
           </div>
         </div>
@@ -199,68 +191,6 @@ export default function MainPage() {
         </section>
       </div>
       <Footer />
-      {/* <footer className="flex-col-center bg-blue-500">
-        <div className="flex w-full max-w-7xl flex-row justify-center bg-red-500 px-4 py-6 lg:px-6">
-          <div className="m-auto -skew-x-12 bg-zinc-900 px-4 py-2">
-            <div className="min-w-[95px] skew-x-12 text-center text-sm font-semibold lg:p-6">
-              fan project.
-            </div>
-          </div>
-          <div className="p-4 text-sm font-semibold text-zinc-900 lg:p-6">
-            No affiliation with Reacher or its rights holders. All trademarks
-            and copyrights belong to their respective owners.
-          </div>
-        </div>
-        <div className="flex w-full flex-row justify-center bg-green-500">
-          <div className="flex w-full max-w-7xl flex-row items-center justify-start">
-            <div className="w-4/5 bg-purple-500">portfolio link</div>
-            <div className="w-1/5 bg-indigo-500">gihub link</div>
-          </div>
-        </div>
-      </footer> */}
-
-      {/* <footer className="bg-accent mt-20 w-full">
-        <div className="bg-red-500">
-          <div className="section-child px-4 lg:px-6">
-            <div className="flex flex-row items-center justify-around space-x-2 py-8 text-sm font-semibold text-zinc-900 lg:py-10">
-              <div className="flex flex-row items-center space-x-6">
-                <div className="min-w-1/4 -skew-x-12 bg-zinc-900 px-3 py-1 text-zinc-200 md:min-w-auto">
-                  <div className="skew-x-12 italic">fan project</div>
-                </div>
-                <div className="text-sm md:text-base">
-                  No affiliation with Reacher or its rights holders. All
-                  trademarks and copyrights belong to their respective owners.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="flex-col-center w-full">
-          <div className="flex w-full max-w-7xl flex-row items-center justify-end">
-            <a
-              className="underline-none group relative z-30 size-full"
-              href="https://www.thomastrudzinski.com/"
-            >
-              <div className="relative z-20 p-4 text-right text-zinc-900 transition-colors duration-300 ease-in-out">
-                thomastrudzinski.com
-              </div>
-              <div className="bg-accent absolute inset-0 z-10 w-0 -skew-x-12 transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-zinc-300"></div>
-            </a>
-
-            <div className="group -skew-x-12 bg-black p-4 transition-colors duration-300 ease-in-out hover:bg-zinc-300">
-              <a className="skew-x-12" href="https://github.com/2nspired">
-                <TbBrandGithubFilled
-                  size={24}
-                  className="skew-x-12 transition-colors duration-300 ease-in-out group-hover:text-zinc-900"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer> */}
-
-      {/* EXPERIMENT WITH OVERLAYS */}
-      {/* <div className="absolute inset-0 z-50 opacity-50 contrast-50 saturate-200 backdrop-blur-[2px] backdrop-hue-rotate-30"></div> */}
     </main>
   );
 }
