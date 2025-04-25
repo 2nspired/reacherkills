@@ -4,7 +4,6 @@ import Profile from "~/app/(main)/_components/Profile";
 // import SeasonDetailsOverlay from "~/app/(main)/_components/season/SeasonDetailsOverlay";
 import CareerStats from "~/app/(main)/_components/CareerStats";
 import VidCard from "~/app/(main)/_components/VidCard";
-import { TbBrandGithubFilled } from "react-icons/tb";
 
 import {
   Card,
