@@ -12,7 +12,7 @@ export default function ReacherSays() {
   useEffect(() => {
     const interval = setInterval(() => {
       setQuote(getRandomQuote());
-    }, 10000);
+    }, 8000);
 
     return () => {
       clearInterval(interval);

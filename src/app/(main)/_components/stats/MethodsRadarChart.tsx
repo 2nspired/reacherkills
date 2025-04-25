@@ -41,9 +41,9 @@ export function MethodsRadarChart({
     <div className="p-4 lg:p-6">
       <ChartContainer
         config={chartConfig}
-        className="mx-auto aspect-square max-h-[500px]"
+        className="mx-auto aspect-square max-h-[500px] text-base"
       >
-        <RadarChart data={methodsData[selected]}>
+        <RadarChart data={methodsData[selected].slice(0, 6)}>
           <ChartTooltip
             cursor={false}
             content={<ChartTooltipContent className="text-black" />}

@@ -9,11 +9,12 @@
     { "method": "blunt force", "xp": 70 },
     { "method": "exploded", "xp": 120 },
     { "method": "burned", "xp": 130 },
-    { "method": "crushed", "xp": 130 },
-    { "method": "silent", "xp": 30 }
+    { "method": "crushed", "xp": 130 }
   ],
   "envMods": [
+    { "tag": "headshot", "xp": 100 },
     { "tag": "night", "xp": 20 },
+    { "tag": "silent", "xp": 30 },
     { "tag": "distance", "xp": 20 },
     { "tag": "injured", "xp": 50 },
     { "tag": "restrained", "xp": 75 },
@@ -25,6 +26,7 @@
   "comboBonuses": [
     { "tag": "double kill", "streak": 2, "xp": 40 },
     { "tag": "triple kill", "streak": 3, "xp": 100 },
+    { "tag": "quad kill", "streak": 4, "xp": 150 },
     { "tag": "killstreak 5+", "streak": 5, "xp": 200 },
     { "tag": "unstoppable 8+", "streak": 8, "xp": 500 }
   ],
