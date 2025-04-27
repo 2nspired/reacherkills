@@ -37,4 +37,6 @@ Not affiliated with Amazon, Lee Child, or the Reacher series.
 - Fastest kills
 
 ## Have ideas? Let me know!
-Drop me a note, I always like feedback! 
+Have a good idea for a feature? Drop me a note! 
+
+You can also learn more about me by visiting my portfolio site at [thomastrudzinski.com](https://www.thomastrudzinski.com/).
