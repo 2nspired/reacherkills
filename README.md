@@ -32,7 +32,7 @@ Not affiliated with Amazon, Lee Child, or the Reacher series.
 
 
 ## Coming Soon
-- XP descriptions to be added
+- XP descriptions
 - Filtering by season, weapon, methods
 - Fastest kills
 
