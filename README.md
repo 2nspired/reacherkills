@@ -1,11 +1,6 @@
 ![](https://github.com/2nspired/reacherkills/blob/main/public/preview/preview-main.jpg)
 
-
-
-# [reacherkills.com](reacherkills.com)
-
-
-
+## [reacherkills.com](https://www.reacherkills.com)
 
 ## About
 **reacherkills** is a fan-made site inspired by the Amazon Prime show Reacher.
@@ -32,9 +27,11 @@ Not affiliated with Amazon, Lee Child, or the Reacher series.
 
 
 ## Coming Soon
-- XP descriptions to be added
+- XP descriptions
 - Filtering by season, weapon, methods
 - Fastest kills
 
 ## Have ideas? Let me know!
-Drop me a note, I always like feedback! 
+Have a good idea for a feature? Drop me a note! 
+
+You can also learn more about me by visiting my portfolio site at [thomastrudzinski.com](https://www.thomastrudzinski.com/).
