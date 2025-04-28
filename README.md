@@ -1,11 +1,6 @@
 ![](https://github.com/2nspired/reacherkills/blob/main/public/preview/preview-main.jpg)
 
-
-
-# [reacherkills.com](reacherkills.com)
-
-
-
+## [reacherkills.com](https://www.reacherkills.com)
 
 ## About
 **reacherkills** is a fan-made site inspired by the Amazon Prime show Reacher.
