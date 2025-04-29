@@ -1,6 +1,5 @@
 import Logo from "~/app/(main)/_components/Logo";
 import { PiFanFill } from "react-icons/pi";
-import { FiTriangle } from "react-icons/fi";
 
 export default function Header() {
   return (

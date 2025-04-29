@@ -1,5 +1,4 @@
 import { TbBrandGithubFilled } from "react-icons/tb";
-import posthog from "posthog-js";
 
 export default function Footer() {
   return (
