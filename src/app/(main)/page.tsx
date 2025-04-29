@@ -30,7 +30,6 @@ export default function MainPage() {
       <section className="w-full overflow-hidden">
         <div className="section-child relative h-[90vh] max-h-[64rem] min-h-[36rem] md:min-h-[60rem] lg:min-h-[50rem] xl:min-h-[910px]">
           <div className="absolute inset-0 z-0 mt-18 scale-x-[-1] transform mask-b-from-20% mask-b-to-80% bg-cover bg-top sm:mt-0 lg:mt-0 2xl:scale-x-[-1]">
-            {" "}
             <Image
               src="/reacher-images/hero/reacher-2560x1440-06-alpha.png"
               alt="Hero Background"

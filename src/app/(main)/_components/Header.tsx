@@ -1,9 +1,26 @@
 import Logo from "~/app/(main)/_components/Logo";
+import { PiFanFill } from "react-icons/pi";
+import { FiTriangle } from "react-icons/fi";
 
 export default function Header() {
   return (
-    <header className="min-h-[3vw] w-full p-4 md:px-8">
-      <div className="section-child">
+    <header className="min-h-[3vw] w-full">
+      {
+        <div className="flex-col-center w-full bg-yellow-400">
+          <div className="flex w-full max-w-7xl flex-col items-start space-y-2 space-x-2 px-5 py-3 text-sm text-zinc-950 md:flex-row md:items-center md:justify-start md:space-y-0">
+            <div className="flex flex-row items-center space-x-2">
+              <div className="inline-block animate-spin">
+                <PiFanFill size={20} className="animate-spin-slow" />
+              </div>
+              <div className="font-semibold">Just A Fan With a Keyboard.</div>
+            </div>
+            <div className="text-left text-xs md:text-sm">
+              Not affiliated with Amazon, Lee Child, or anyone official.
+            </div>
+          </div>
+        </div>
+      }
+      <div className="section-child p-4 md:p-6">
         <div className="flex flex-col justify-between md:flex-row md:items-center">
           <Logo className="flex w-32 items-center text-2xl" />
           <div className="font-sometype text-xs md:block md:text-sm lg:text-base">
