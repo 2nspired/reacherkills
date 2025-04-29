@@ -1,4 +1,5 @@
 import { TbBrandGithubFilled } from "react-icons/tb";
+import posthog from "posthog-js";
 
 export default function Footer() {
   return (
@@ -24,6 +25,7 @@ const FooterLinkHover = () => {
     <div className="flex-col-center bg-accent w-full">
       <div className="flex w-full max-w-7xl flex-row items-center justify-end">
         <a
+          id="portfolio-link"
           className="underline-none group relative z-30 size-full"
           href="https://www.thomastrudzinski.com/"
         >
@@ -34,7 +36,11 @@ const FooterLinkHover = () => {
         </a>
 
         <div className="group mr-4 -skew-x-12 bg-black p-4 transition-colors duration-300 ease-in-out hover:bg-zinc-300">
-          <a className="skew-x-12" href="https://github.com/2nspired">
+          <a
+            id="github-link"
+            className="skew-x-12"
+            href="https://github.com/2nspired"
+          >
             <TbBrandGithubFilled
               size={24}
               className="skew-x-12 transition-colors duration-300 ease-in-out group-hover:text-zinc-900"
